@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly | IT Consulting Corporate & Business</title>
+  <meta name="description" content="Strategic IT Consulting, Cloud Architectures, and Enterprise Digital Transformation Solutions.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER / NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container navbar-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="STACKLY Home">
+        <img src="assets/images/logo.webp" alt="STACKLY" class="site-logo-img">
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" id="primaryNav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="casestudies.html" class="nav-link">Case Studies</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+
+        <!-- Mobile-only actions inside drawer -->
+        <div class="mobile-nav-actions">
+          <div class="nav-search-wrap">
+            <input type="text" class="nav-search-input" placeholder="Search for programs..." aria-label="Search">
+          </div>
+          <a href="login.html" class="nav-user-auth">
+            <svg viewBox="0 0 24 24" class="user-icon-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Login / Sign Up</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <div class="nav-search-wrap desktop-only">
+          <input type="text" class="nav-search-input" placeholder="Search for programs..." aria-label="Search">
+        </div>
+        <a href="login.html" class="nav-user-auth desktop-only">
+          <svg viewBox="0 0 24 24" class="user-icon-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login / Sign Up</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section">
+      <!-- Looping Background Cover Carousel -->
+      <div class="hero-bg-carousel" aria-hidden="true">
+        <div class="hero-bg-slide active" style="background-image: url('assets/images/hero-bg-1.webp');"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/images/hero-bg-2.webp');"></div>
+        <div class="hero-bg-slide" style="background-image: url('assets/images/hero-bg-3.webp');"></div>
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <div class="hero-glow-blob"></div>
+      <div class="mesh-gradient-orb mesh-orb-1" aria-hidden="true"></div>
+      <div class="mesh-gradient-orb mesh-orb-2" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Hero Text -->
+          <div class="hero-content reveal">
+            <div class="hero-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+              IT Consulting for High-Growth Enterprises
+            </div>
+            <h1 class="hero-title">
+              IT Consulting for<br>
+              <span class="macbook-text-shimmer">Smarter Business Growth</span>
+            </h1>
+            <p class="hero-description">
+              We deliver strategic IT solutions, enterprise cloud architectures, and digital transformation to empower modern organizations to innovate and scale securely.
+            </p>
+            <div class="hero-btn-group">
+              <a href="services.html" class="btn btn-primary">
+                Explore Services
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#about" class="btn-hero-video">
+                <div class="video-play-pulse">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <span>How We Work</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Visual -->
+          <div class="hero-visual reveal delay-200">
+            <div class="hero-image-frame">
+              <img src="assets/images/hero-team.webp" alt="IT Consulting Corporate Team in Strategy Meeting" width="600" height="420" loading="eager">
+              <div class="hero-float-badge animate-float">
+                <div class="float-badge-icon">✓</div>
+                <div class="float-badge-text">
+                  <small>Proven Results</small>
+                  <strong>Better Technology, Better Business</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Background Slide Indicators -->
+        <div class="hero-slide-indicators" aria-label="Hero background slideshow controls">
+          <button type="button" class="hero-indicator-dot active" data-slide="0" aria-label="Slide 1: Cloud Data Center" aria-current="true"></button>
+          <button type="button" class="hero-indicator-dot" data-slide="1" aria-label="Slide 2: Global Cyber Network"></button>
+          <button type="button" class="hero-indicator-dot" data-slide="2" aria-label="Slide 3: Enterprise IT Strategy"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FLOATING STATS / METRIC BAR
+         ========================================================================== -->
+    <div class="stats-overlap-container">
+      <div class="container">
+        <div class="stats-card-wrapper reveal">
+          <!-- Stat 1 -->
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-number" data-counter="500" data-suffix="+">500+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-number" data-counter="250" data-suffix="+">250+</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-number" data-counter="12" data-suffix="+">12+</div>
+              <div class="stat-label">Years of Experience</div>
+            </div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-number" data-counter="98" data-suffix="%">98%</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SERVICES SECTION
+         ========================================================================== -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-badge">WHAT WE OFFER</div>
+          <h2 class="section-title">Comprehensive IT Consulting Services</h2>
+          <p class="section-subtitle">
+            Tailored technology solutions designed to solve complex business challenges and drive sustainable growth.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card reveal delay-100">
+            <div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <h3 class="service-title">IT Strategy & Consulting</h3>
+              <p class="service-desc">
+                Strategic roadmap planning, IT architecture assessment, and digital capability benchmarking for modern enterprises.
+              </p>
+            </div>
+            <a href="services.html" class="service-arrow-btn" aria-label="Learn more about IT Strategy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card reveal delay-200">
+            <div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <h3 class="service-title">Cloud Solutions</h3>
+              <p class="service-desc">
+                Seamless multi-cloud migration, AWS and Azure infrastructure management, serverless design, and cost optimization.
+              </p>
+            </div>
+            <a href="services.html" class="service-arrow-btn" aria-label="Learn more about Cloud Solutions">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card reveal delay-300">
+            <div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="service-title">Custom Software Development</h3>
+              <p class="service-desc">
+                Scalable enterprise web applications, high-throughput microservices, API architecture, and DevOps automation.
+              </p>
+            </div>
+            <a href="services.html" class="service-arrow-btn" aria-label="Learn more about Software Development">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card reveal delay-400">
+            <div>
+              <div class="service-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="service-title">Digital Transformation</h3>
+              <p class="service-desc">
+                End-to-end process digitalization, cybersecurity defense audits, system modernization, and automated workflows.
+              </p>
+            </div>
+            <a href="services.html" class="service-arrow-btn" aria-label="Learn more about Digital Transformation">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT US SECTION
+         ========================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left: Intro -->
+          <div class="about-intro-col reveal">
+            <div class="section-badge">ABOUT US</div>
+            <h2 class="section-title">Who We Are</h2>
+            <p>
+              We are a dedicated team of IT consultants and engineers helping companies navigate the digital landscape with confidence and agility. Our mission is to accelerate tech transformation and unlock sustainable business value.
+            </p>
+            <a href="about.html" class="btn btn-primary">Learn More</a>
+          </div>
+
+          <!-- Center: Image -->
+          <div class="about-image-col reveal delay-200">
+            <div class="about-image-wrapper">
+              <img src="assets/images/office-space.webp" alt="Stackin Modern IT Consulting Boardroom and Office" width="500" height="360" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Right: 3 Key Points -->
+          <div class="about-features-col reveal delay-300">
+            <div class="about-feature-item">
+              <div class="about-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="about-feat-content">
+                <h4>Expert Team</h4>
+                <p>Senior certified cloud architects and system engineers with proven experience.</p>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="about-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="about-feat-content">
+                <h4>Results-Driven Approach</h4>
+                <p>Precision execution mapped directly to your specific business milestones and ROI.</p>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="about-feat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="about-feat-content">
+                <h4>24/7 Dedicated Support</h4>
+                <p>Round-the-clock proactive monitoring, incident response, and performance tuning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHY PARTNER WITH US SECTION
+         ========================================================================== -->
+    <section class="why-us-section">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-badge">WHY CHOOSE US</div>
+          <h2 class="section-title">Why Partner With Us?</h2>
+          <p class="section-subtitle">
+            We deliver strategic value through deep industry experience and cutting-edge technology.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <!-- Feature 1 -->
+          <div class="why-card reveal delay-100">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="why-content">
+              <h4>Proven Track Record</h4>
+              <p>Over 12 years of delivering resilient IT architectures and high-ROI transformations.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="why-card reveal delay-200">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <div class="why-content">
+              <h4>Flexible Engagement</h4>
+              <p>Tailored cooperation models from end-to-end consulting to dedicated squad augmentation.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="why-card reveal delay-300">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="why-content">
+              <h4>Long-Term Support</h4>
+              <p>Continuous optimization, SLA security management, and future-proof scaling.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         OUR SIMPLE 4-STEP PROCESS
+         ========================================================================== -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-badge">OUR PROCESS</div>
+          <h2 class="section-title">Our Simple 4-Step Process</h2>
+          <p class="section-subtitle">
+            We follow a battle-tested methodology to turn your business vision into robust technical execution.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <!-- Step 1 -->
+          <div class="process-step-item reveal delay-100">
+            <div class="process-num-circle">01</div>
+            <h3 class="process-title">Discovery</h3>
+            <p class="process-desc">
+              In-depth audit of current IT infrastructure, business objectives, and regulatory requirements.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-item reveal delay-200">
+            <div class="process-num-circle">02</div>
+            <h3 class="process-title">Plan</h3>
+            <p class="process-desc">
+              Detailed technical blueprint, architecture mapping, tech stack selection, and delivery milestones.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-item reveal delay-300">
+            <div class="process-num-circle">03</div>
+            <h3 class="process-title">Execute</h3>
+            <p class="process-desc">
+              Agile development, continuous security integration, comprehensive QA, and seamless deployment.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-item reveal delay-400">
+            <div class="process-num-circle">04</div>
+            <h3 class="process-title">Support</h3>
+            <p class="process-desc">
+              24/7 SLA monitoring, infrastructure scaling, automated backups, and continuous optimizations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INDUSTRIES WE EMPOWER (DARK NAVY GRID)
+         ========================================================================== -->
+    <section class="industries-section">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-badge on-dark">INDUSTRIES WE SERVE</div>
+          <h2 class="section-title on-dark">Industries We Empower</h2>
+          <p class="section-subtitle on-dark">
+            Tailored IT consulting built for the unique regulatory, operational, and customer requirements of your domain.
+          </p>
+        </div>
+
+        <div class="industries-grid">
+          <!-- 1. Healthcare -->
+          <div class="industry-card reveal delay-100">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h4 class="industry-name">Healthcare</h4>
+          </div>
+
+          <!-- 2. Finance -->
+          <div class="industry-card reveal delay-100">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </div>
+            <h4 class="industry-name">Finance</h4>
+          </div>
+
+          <!-- 3. Manufacturing -->
+          <div class="industry-card reveal delay-200">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h4 class="industry-name">Manufacturing</h4>
+          </div>
+
+          <!-- 4. Retail -->
+          <div class="industry-card reveal delay-200">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+            <h4 class="industry-name">Retail</h4>
+          </div>
+
+          <!-- 5. Education -->
+          <div class="industry-card reveal delay-300">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <h4 class="industry-name">Education</h4>
+          </div>
+
+          <!-- 6. Real Estate -->
+          <div class="industry-card reveal delay-300">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h4 class="industry-name">Real Estate</h4>
+          </div>
+
+          <!-- 7. Logistics -->
+          <div class="industry-card reveal delay-400">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <h4 class="industry-name">Logistics</h4>
+          </div>
+
+          <!-- 8. Travel & Hospitality -->
+          <div class="industry-card reveal delay-400">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path>
+              </svg>
+            </div>
+            <h4 class="industry-name">Travel & Hospitality</h4>
+          </div>
+
+          <!-- 9. Government -->
+          <div class="industry-card reveal delay-500">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="21" x2="21" y2="21"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <polyline points="5 10 5 21"></polyline>
+                <polyline points="19 10 19 21"></polyline>
+                <polyline points="12 10 12 21"></polyline>
+                <polygon points="12 2 20 7 4 7 12 2"></polygon>
+              </svg>
+            </div>
+            <h4 class="industry-name">Government</h4>
+          </div>
+
+          <!-- 10. Telecommunications -->
+          <div class="industry-card reveal delay-500">
+            <div class="industry-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.93 4.93a10 10 0 0 1 14.14 0"></path>
+                <path d="M7.76 7.76a6 6 0 0 1 8.48 0"></path>
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M12 14v7"></path>
+              </svg>
+            </div>
+            <h4 class="industry-name">Telecommunications</h4>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         REAL RESULTS, REAL GROWTH (IMPACT METRICS)
+         ========================================================================== -->
+    <section class="impact-section">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-badge">OUR IMPACT</div>
+          <h2 class="section-title">Real Results, Real Growth</h2>
+          <p class="section-subtitle">
+            Our numbers reflect our dedication to client excellence and digital success.
+          </p>
+        </div>
+
+        <div class="impact-grid">
+          <!-- Impact 1 -->
+          <div class="impact-card reveal delay-100">
+            <div class="impact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <div>
+              <div class="impact-number" data-counter="200" data-suffix="+">200+</div>
+              <div class="impact-label">Active Cloud Projects</div>
+            </div>
+          </div>
+
+          <!-- Impact 2 -->
+          <div class="impact-card reveal delay-200">
+            <div class="impact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="impact-number" data-counter="50" data-suffix="+">50+</div>
+              <div class="impact-label">Enterprise Clients</div>
+            </div>
+          </div>
+
+          <!-- Impact 3 -->
+          <div class="impact-card reveal delay-300">
+            <div class="impact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="impact-number" data-counter="120" data-suffix="%">120%</div>
+              <div class="impact-label">Average ROI Increase</div>
+            </div>
+          </div>
+
+          <!-- Impact 4 -->
+          <div class="impact-card reveal delay-400">
+            <div class="impact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="impact-number" data-counter="99" data-suffix="%">99%</div>
+              <div class="impact-label">Client Retention</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS SECTION
+         ========================================================================== -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-badge">CLIENT TESTIMONIALS</div>
+          <h2 class="section-title">Trusted by Businesses Worldwide</h2>
+          <p class="section-subtitle">
+            See how our tailored IT consulting services empower leadership teams to deliver secure, scalable innovations.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card reveal delay-100">
+            <div>
+              <div class="stars-row" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-quote">
+                "Stackin modernized our cloud infrastructure seamlessly. Their team helped us reduce deployment cycles from 3 weeks to 2 hours while improving resilience across three global regions."
+              </p>
+            </div>
+            <div class="client-profile">
+              <img src="assets/images/testimonial-2.webp" alt="David Miller avatar" class="client-avatar" width="52" height="52" loading="lazy">
+              <div>
+                <div class="client-name">David Miller</div>
+                <div class="client-role">Chief Technology Officer, FinTech Global</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card reveal delay-200">
+            <div>
+              <div class="stars-row" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="testimonial-quote">
+                "Their cybersecurity roadmap and zero-trust engineering gave our leadership total peace of mind. Truly the most capable and transparent IT partners we've collaborated with."
+              </p>
+            </div>
+            <div class="client-profile">
+              <img src="assets/images/testimonial-1.webp" alt="Sarah Jenkins avatar" class="client-avatar" width="52" height="52" loading="lazy">
+              <div>
+                <div class="client-name">Sarah Jenkins</div>
+                <div class="client-role">VP of Operations, HealthCorp Systems</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INSIGHTS / BLOG SECTION
+         ========================================================================== -->
+    <section class="blog-section" id="blog">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-badge">LATEST NEWS</div>
+          <h2 class="section-title">Insights, Ideas & Best Practices</h2>
+          <p class="section-subtitle">
+            Stay informed with the latest tech trends, strategy guides, and engineering breakthroughs.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- Article 1 -->
+          <article class="blog-card reveal delay-100">
+            <div class="blog-thumbnail-wrapper">
+              <img src="assets/images/blog-cloud.webp" alt="Cloud Optimization" width="400" height="210" loading="lazy">
+              <span class="blog-tag">Cloud Tech</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">Nov 02, 2026 • 5 min read</div>
+              <h3 class="blog-title">How Cloud Optimization is Reshaping Enterprise Scalability</h3>
+              <a href="blog.html" class="blog-link">
+                Read Article
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card reveal delay-200">
+            <div class="blog-thumbnail-wrapper">
+              <img src="assets/images/blog-strategy.webp" alt="IT Migration Strategies" width="400" height="210" loading="lazy">
+              <span class="blog-tag">IT Strategy</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">Oct 28, 2026 • 7 min read</div>
+              <h3 class="blog-title">The 5 Strategies for Seamless Enterprise IT Migration</h3>
+              <a href="blog.html" class="blog-link">
+                Read Article
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card reveal delay-300">
+            <div class="blog-thumbnail-wrapper">
+              <img src="assets/images/blog-security.webp" alt="Cybersecurity Mitigation" width="400" height="210" loading="lazy">
+              <span class="blog-tag">Cyber Security</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">Oct 24, 2026 • 6 min read</div>
+              <h3 class="blog-title">Top Cybersecurity Threats and How to Mitigate Them</h3>
+              <a href="blog.html" class="blog-link">
+                Read Article
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="blog-carousel-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALL TO ACTION BANNER
+         ========================================================================== -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-banner-box reveal">
+          <div class="cta-text-content">
+            <div class="section-badge on-dark">START YOUR TRANSFORMATION</div>
+            <h2 class="cta-title">Ready to Transform Your Business?</h2>
+            <p class="cta-desc">
+              Schedule a free 30-minute discovery call with our principal IT consultants to identify optimization opportunities and scale your systems.
+            </p>
+          </div>
+          <div class="cta-action-wrap">
+            <a href="#consultation" data-open-modal="consultation" class="btn btn-white">
+              Schedule a Free Consultation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="STACKLY Home">
+            <img src="assets/images/logo.webp" alt="STACKLY" class="site-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering businesses through scalable IT solutions, cybersecurity audits, and strategic cloud consulting.
+          </p>
+          <div class="social-links">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="X (formerly Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+              </svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="casestudies.html">Case Studies</a></li>
+            <li><a href="blog.html">Blog & Insights</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="footer-col-title">IT Services</h4>
+          <ul class="footer-nav-list">
+            <li><a href="services.html">IT Strategy & Consulting</a></li>
+            <li><a href="services.html">Cloud Migration & DevOps</a></li>
+            <li><a href="services.html">Custom Software Development</a></li>
+            <li><a href="services.html">Cyber Security & Audits</a></li>
+            <li><a href="services.html">Digital Transformation</a></li>
+            <li><a href="services.html">Data Engineering & Analytics</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div>
+          <h4 class="footer-col-title">Contact Us:</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:info@itconsult.com">info@itconsult.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Chennai, India</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Newsletter -->
+        <div>
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">
+            Subscribe to our weekly briefing for the latest IT strategy and tech insights.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Stackin IT Consulting Corporate & Business. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Statement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       CONSULTATION MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Schedule Free Consultation</h3>
+        <p class="modal-subtitle">Meet 1-on-1 with an enterprise IT architect. Zero obligation.</p>
+      </div>
+      <form class="modal-form" id="consultationForm">
+        <div class="form-group">
+          <label for="consultName">Your Name</label>
+          <input type="text" id="consultName" class="form-control" placeholder="e.g. Michael Vance" required>
+        </div>
+        <div class="form-group">
+          <label for="consultEmail">Business Email</label>
+          <input type="email" id="consultEmail" class="form-control" placeholder="m.vance@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="consultService">Primary Area of Interest</label>
+          <select id="consultService" class="form-control">
+            <option value="cloud">Cloud Migration & Multi-Cloud Architecture</option>
+            <option value="strategy">IT Strategy & Enterprise Advisory</option>
+            <option value="software">Custom Software & API Modernization</option>
+            <option value="security">Cybersecurity & Compliance Audit</option>
+            <option value="transformation">Digital Transformation & Automation</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Confirm Consultation Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/validation.js"></script>
+  <!-- GSAP & ScrollTrigger Animation Engine -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/consultation.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

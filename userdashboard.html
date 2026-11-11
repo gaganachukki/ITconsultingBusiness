@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Cloud &amp; Consulting Workspace | Stackly Enterprise</title>
+  <meta name="description" content="Manage your enterprise IT consulting engagements, multi-cloud architecture, agile sprints, and 24/7 managed support.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/userdashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="user-dashboard-body">
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ==========================================================================
+       SIDEBAR NAVIGATION
+       ========================================================================== -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-brand" aria-label="STACKLY Home">
+        <img src="assets/images/logo.webp" alt="STACKLY" class="sidebar-brand-img">
+      </a>
+      <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Active Client Workspace Badge -->
+    <div class="sidebar-client-badge">
+      <div class="client-avatar-mini">AL</div>
+      <div class="client-meta">
+        <span class="client-company-name">Apex Global Logistics</span>
+        <span class="client-plan-tier">Enterprise Cloud SLA</span>
+      </div>
+    </div>
+
+    <!-- Nav Items -->
+    <nav class="sidebar-nav" aria-label="Client Workspace Navigation">
+      <div class="sidebar-nav-heading">Engagements</div>
+
+      <!-- Tab 1: Overview -->
+      <button type="button" class="sidebar-item active" data-tab="tab-overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Overview</span>
+      </button>
+
+      <!-- Tab 2: Cloud Infrastructure -->
+      <button type="button" class="sidebar-item" data-tab="tab-cloud">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+        </svg>
+        <span>Cloud Clusters</span>
+        <span class="sidebar-badge highlight">Active</span>
+      </button>
+
+      <!-- Tab 3: Sprints & Milestones -->
+      <button type="button" class="sidebar-item" data-tab="tab-sprints">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        <span>Sprints &amp; Delivery</span>
+      </button>
+
+      <!-- Tab 4: Cybersecurity & Compliance -->
+      <button type="button" class="sidebar-item" data-tab="tab-security">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Security &amp; SOC2</span>
+        <span class="sidebar-badge">98%</span>
+      </button>
+
+      <!-- Tab 5: Advisory Team -->
+      <button type="button" class="sidebar-item" data-tab="tab-advisory">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Consulting Pod</span>
+      </button>
+
+      <div class="sidebar-nav-heading">Finance &amp; Operations</div>
+
+      <!-- Tab 6: Invoices & Billing -->
+      <button type="button" class="sidebar-item" data-tab="tab-invoices">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+          <line x1="2" y1="10" x2="22" y2="10"></line>
+        </svg>
+        <span>Invoices &amp; Retainers</span>
+      </button>
+
+      <!-- Tab 7: Support & Tickets -->
+      <button type="button" class="sidebar-item" data-tab="tab-support">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>Support SLA</span>
+        <span class="sidebar-badge">2 Open</span>
+      </button>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <a href="index.html" class="sidebar-link-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Return to Main Website</span>
+      </a>
+      <a href="login.html" class="sidebar-link-btn" style="color: #ef4444;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT WRAPPER
+       ========================================================================== -->
+  <div class="dash-main-wrap">
+    <!-- Top Header Bar -->
+    <header class="dash-topbar">
+      <div class="topbar-left">
+        <button type="button" class="dash-mobile-hamburger" id="hamburgerBtn" aria-label="Open mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Search Bar -->
+        <div class="dash-search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="dash-search-input" placeholder="Search clusters, sprints, tickets..." aria-label="Search dashboard">
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Live System SLA Health -->
+        <div class="system-health-pill">
+          <span class="health-pulse-dot"></span>
+          <span>SLA 99.99% Operational</span>
+        </div>
+
+        <!-- Notification Bell Dropdown -->
+        <div class="header-action-container">
+          <button type="button" class="header-icon-btn" id="notifBellBtn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notif-badge-count">3</span>
+          </button>
+
+          <!-- Dropdown Panel -->
+          <div class="dropdown-panel" id="notifDropdown">
+            <div class="dropdown-header">
+              <span class="dropdown-header-title">Notifications</span>
+              <span class="status-pill info">3 Unread</span>
+            </div>
+            <div class="dropdown-list">
+              <a href="#cloud" class="dropdown-item unread">
+                <div>
+                  <p class="dropdown-item-title">EKS Cluster v2.4 Deployed</p>
+                  <span class="dropdown-item-time">Production staging completed &bull; 12m ago</span>
+                </div>
+              </a>
+              <a href="#security" class="dropdown-item unread">
+                <div>
+                  <p class="dropdown-item-title">SOC2 Audit Passed (Zero Vulnerabilities)</p>
+                  <span class="dropdown-item-time">Quarterly compliance audit approved &bull; 2h ago</span>
+                </div>
+              </a>
+              <a href="#invoices" class="dropdown-item unread">
+                <div>
+                  <p class="dropdown-item-title">November Retainer Statement Ready</p>
+                  <span class="dropdown-item-time">Invoice #STK-2026-114 available for download</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Action Button -->
+        <button type="button" class="btn-top-action" id="openReviewModalBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Request Review</span>
+        </button>
+
+        <!-- User Profile Dropdown -->
+        <div class="header-action-container">
+          <button type="button" class="user-profile-btn" id="userProfileBtn">
+            <div class="user-profile-avatar">AH</div>
+            <div class="user-profile-meta">
+              <span class="user-profile-name">Alexander Hayes</span>
+              <span class="user-profile-role">VP of Technology</span>
+            </div>
+          </button>
+
+          <div class="dropdown-panel" id="profileDropdown" style="width: 240px;">
+            <div class="dropdown-header">
+              <div>
+                <p style="font-size:0.875rem; font-weight:700; color:#011e48;">Alexander Hayes</p>
+                <p style="font-size:0.75rem; color:#64748b;">a.hayes@apexlogistics.com</p>
+              </div>
+            </div>
+            <div class="dropdown-list">
+              <a href="#overview" class="dropdown-item">Account Settings</a>
+              <a href="#invoices" class="dropdown-item">Billing &amp; Tax Info</a>
+              <a href="index.html" class="dropdown-item">Stackly Main Site</a>
+              <a href="login.html" class="dropdown-item" style="color:#ef4444; font-weight:700;">Sign Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="dash-content">
+
+      <!-- ======================================================================
+           TAB 1: OVERVIEW
+           ====================================================================== -->
+      <section class="tab-panel active" id="tab-overview">
+        <!-- Page Header -->
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">Executive Engagement Overview</h1>
+            <p class="dash-page-subtitle">Monitoring real-time multi-cloud architectures, sprint deliveries, and advisory velocity.</p>
+          </div>
+          <div class="dash-header-actions">
+            <button type="button" class="btn-top-action" id="openTicketModalBtn" style="background:#011e48;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>New Service Ticket</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 KPI Cards -->
+        <div class="kpi-grid">
+          <!-- KPI 1 -->
+          <div class="kpi-card">
+            <div class="kpi-card-top">
+              <span class="kpi-label">Active Engagements</span>
+              <div class="kpi-icon-wrap kpi-icon-blue">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">3 Projects</div>
+            <div class="kpi-trend trend-up">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+              <span>Cloud &bull; ERP API &bull; Zero Trust</span>
+            </div>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="kpi-card">
+            <div class="kpi-card-top">
+              <span class="kpi-label">Sprint 16 Delivery</span>
+              <div class="kpi-icon-wrap kpi-icon-emerald">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">88.4%</div>
+            <div class="kpi-trend trend-up">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+              <span>On-track for Friday release</span>
+            </div>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="kpi-card">
+            <div class="kpi-card-top">
+              <span class="kpi-label">Cloud Cluster SLA</span>
+              <div class="kpi-icon-wrap kpi-icon-purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">99.98%</div>
+            <div class="kpi-trend trend-neutral">
+              <span>Zero downtime last 90 days</span>
+            </div>
+          </div>
+
+          <!-- KPI 4 -->
+          <div class="kpi-card">
+            <div class="kpi-card-top">
+              <span class="kpi-label">Monthly Advisory Hours</span>
+              <div class="kpi-icon-wrap kpi-icon-amber">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="kpi-value">142 / 160h</div>
+            <div class="kpi-trend trend-up">
+              <span>18 hours remaining in retainer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Grid: Milestones + Dedicated Pod -->
+        <div class="dash-grid-2col">
+          <!-- Left: Active Milestones -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h2 class="dash-card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span>Active Milestones &amp; Architecture Roadmap</span>
+              </h2>
+              <span class="status-pill success">Sprint 16 Active</span>
+            </div>
+
+            <div class="milestone-list">
+              <!-- Item 1 -->
+              <div class="milestone-item">
+                <div class="milestone-badge-num completed">&#10003;</div>
+                <div class="milestone-content">
+                  <div class="milestone-title-row">
+                    <span class="milestone-name">Multi-Region Cloud VPC &amp; Kubernetes Mesh</span>
+                    <span class="status-pill success">Completed</span>
+                  </div>
+                  <p class="milestone-desc">Automated Terraform deployment across AWS us-east &amp; eu-central with Cilium eBPF mesh.</p>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="milestone-item">
+                <div class="milestone-badge-num">2</div>
+                <div class="milestone-content">
+                  <div class="milestone-title-row">
+                    <span class="milestone-name">Event-Driven Logistics Microservices</span>
+                    <span class="status-pill info">In Progress</span>
+                  </div>
+                  <p class="milestone-desc">Kafka stream processing for real-time fleet telemetry and automated invoice routing.</p>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="milestone-item">
+                <div class="milestone-badge-num">3</div>
+                <div class="milestone-content">
+                  <div class="milestone-title-row">
+                    <span class="milestone-name">Zero Trust Access &amp; Okta SSO Integration</span>
+                    <span class="status-pill warning">Testing</span>
+                  </div>
+                  <p class="milestone-desc">Role-based access control, mTLS gateway, and continuous compliance audit logging.</p>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="width: 92%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Dedicated Consulting Pod -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h2 class="dash-card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                <span>Assigned Advisory Pod</span>
+              </h2>
+              <span class="status-pill info">Pod Alpha</span>
+            </div>
+
+            <div class="consultant-pod-grid" style="grid-template-columns: 1fr;">
+              <!-- Architect 1 -->
+              <div class="consultant-card" style="flex-direction:row; text-align:left; align-items:center; gap:16px;">
+                <img src="assets/images/team-1.webp" alt="Arun Kumar" class="consultant-avatar" style="margin-bottom:0;">
+                <div style="flex:1;">
+                  <h3 class="consultant-name">Arun Kumar</h3>
+                  <div class="consultant-role">Principal Enterprise Consultant</div>
+                  <p style="font-size:0.775rem; color:#64748b;">Architecture oversight, executive roadmap alignment.</p>
+                </div>
+                <a href="#tab-advisory" class="consultant-contact-btn">Meet</a>
+              </div>
+
+              <!-- Architect 2 -->
+              <div class="consultant-card" style="flex-direction:row; text-align:left; align-items:center; gap:16px;">
+                <img src="assets/images/team-3.webp" alt="Vikram R" class="consultant-avatar" style="margin-bottom:0;">
+                <div style="flex:1;">
+                  <h3 class="consultant-name">Vikram R</h3>
+                  <div class="consultant-role">Lead Cloud Architect</div>
+                  <p style="font-size:0.775rem; color:#64748b;">AWS/Azure multi-region cluster modernization.</p>
+                </div>
+                <a href="#tab-advisory" class="consultant-contact-btn">Meet</a>
+              </div>
+
+              <!-- Architect 3 -->
+              <div class="consultant-card" style="flex-direction:row; text-align:left; align-items:center; gap:16px;">
+                <img src="assets/images/team-4.webp" alt="Sneha K" class="consultant-avatar" style="margin-bottom:0;">
+                <div style="flex:1;">
+                  <h3 class="consultant-name">Sneha K</h3>
+                  <div class="consultant-role">VP of Cybersecurity</div>
+                  <p style="font-size:0.775rem; color:#64748b;">SOC2 compliance &amp; automated penetration audits.</p>
+                </div>
+                <a href="#tab-advisory" class="consultant-contact-btn">Meet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Cloud Deployments Table -->
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h2 class="dash-card-title">Recent Git Deployments &amp; Infrastructure Commits</h2>
+            <span class="status-pill success">Live Telemetry</span>
+          </div>
+
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Commit / Release</th>
+                  <th>Cluster Environment</th>
+                  <th>Lead Architect</th>
+                  <th>Status</th>
+                  <th>Timestamp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="code-badge">v2.4.1-prod</span> Logistics Route Optimizer</td>
+                  <td>AWS EKS (us-east-1)</td>
+                  <td>Vikram R</td>
+                  <td><span class="status-pill success">Deployed</span></td>
+                  <td>Today, 11:42 AM</td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">v2.4.0-api</span> Kafka Telemetry Gateway</td>
+                  <td>Azure App Services</td>
+                  <td>Arun Kumar</td>
+                  <td><span class="status-pill success">Deployed</span></td>
+                  <td>Yesterday, 4:15 PM</td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">sec-audit-98</span> Zero Trust Policy Hardening</td>
+                  <td>Global Cloud VPC</td>
+                  <td>Sneha K</td>
+                  <td><span class="status-pill info">Verified</span></td>
+                  <td>Nov 08, 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 2: CLOUD INFRASTRUCTURE
+           ====================================================================== -->
+      <section class="tab-panel" id="tab-cloud">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">Multi-Cloud Infrastructure &amp; Clusters</h1>
+            <p class="dash-page-subtitle">Real-time health telemetry across AWS, Azure, and Google Cloud managed environments.</p>
+          </div>
+          <div class="dash-header-actions">
+            <button type="button" class="btn-top-action">
+              <span>+ Provision Node Group</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h2 class="dash-card-title">Managed Production Cloud Fleet</h2>
+            <span class="status-pill success">All 4 Clusters Healthy</span>
+          </div>
+
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Cluster Identifier</th>
+                  <th>Cloud Provider</th>
+                  <th>Region / AZ</th>
+                  <th>Pods / Nodes</th>
+                  <th>CPU &bull; RAM Load</th>
+                  <th>Monthly Spend</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>apex-prod-k8s-01</strong></td>
+                  <td>AWS EKS</td>
+                  <td>us-east-1 (N. Virginia)</td>
+                  <td>64 Pods / 8 Nodes</td>
+                  <td>32% CPU &bull; 44% RAM</td>
+                  <td>$4,820 / mo</td>
+                  <td><span class="status-pill success">Operational</span></td>
+                </tr>
+                <tr>
+                  <td><strong>apex-eu-gateway-02</strong></td>
+                  <td>Azure AKS</td>
+                  <td>westeurope (Amsterdam)</td>
+                  <td>48 Pods / 6 Nodes</td>
+                  <td>28% CPU &bull; 38% RAM</td>
+                  <td>$3,650 / mo</td>
+                  <td><span class="status-pill success">Operational</span></td>
+                </tr>
+                <tr>
+                  <td><strong>apex-lakehouse-db</strong></td>
+                  <td>GCP BigQuery</td>
+                  <td>us-central1 (Iowa)</td>
+                  <td>Serverless Analytics</td>
+                  <td>Auto-scaling</td>
+                  <td>$2,140 / mo</td>
+                  <td><span class="status-pill success">Operational</span></td>
+                </tr>
+                <tr>
+                  <td><strong>apex-stage-k8s-03</strong></td>
+                  <td>AWS EKS</td>
+                  <td>us-east-2 (Ohio)</td>
+                  <td>24 Pods / 3 Nodes</td>
+                  <td>18% CPU &bull; 22% RAM</td>
+                  <td>$1,180 / mo</td>
+                  <td><span class="status-pill info">Staging</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Cost Optimization Savings</div>
+            <div class="kpi-value">$24,500 / yr</div>
+            <div class="kpi-trend trend-up">Reserved Instance Spot Arbitrage</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Average API Latency</div>
+            <div class="kpi-value">18.4 ms</div>
+            <div class="kpi-trend trend-up">Edge CDN accelerated</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Automated Backups</div>
+            <div class="kpi-value">100% Verified</div>
+            <div class="kpi-trend trend-up">Daily RPO &lt; 5 mins</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Disaster Recovery (RTO)</div>
+            <div class="kpi-value">12 mins</div>
+            <div class="kpi-trend trend-up">Multi-region failover ready</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 3: SPRINTS & DELIVERABLES
+           ====================================================================== -->
+      <section class="tab-panel" id="tab-sprints">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">Agile Sprints &amp; Technical Roadmap</h1>
+            <p class="dash-page-subtitle">Track two-week sprint cadences, Jira user stories, and code reviews.</p>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h2 class="dash-card-title">Sprint 16: Event Stream &amp; Automated Dispatch</h2>
+            <span class="status-pill info">Nov 03 &ndash; Nov 17, 2026</span>
+          </div>
+
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>User Story / Task</th>
+                  <th>Assignee</th>
+                  <th>Story Points</th>
+                  <th>Review Status</th>
+                  <th>Target Release</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>STK-412</strong> Real-time Kafka consumer for GPS fleet telemetry</td>
+                  <td>Vikram R</td>
+                  <td>8 pts</td>
+                  <td><span class="status-pill success">PR Merged</span></td>
+                  <td>Sprint 16</td>
+                </tr>
+                <tr>
+                  <td><strong>STK-415</strong> PostgreSQL read-replica connection pooling with PgBouncer</td>
+                  <td>DevOps Pod</td>
+                  <td>5 pts</td>
+                  <td><span class="status-pill info">In Review</span></td>
+                  <td>Sprint 16</td>
+                </tr>
+                <tr>
+                  <td><strong>STK-419</strong> Zero Trust service mesh mTLS certificate rotation</td>
+                  <td>Sneha K</td>
+                  <td>5 pts</td>
+                  <td><span class="status-pill success">Passed QA</span></td>
+                  <td>Sprint 16</td>
+                </tr>
+                <tr>
+                  <td><strong>STK-423</strong> Automated invoice dispatch webhook to SAP ERP</td>
+                  <td>Custom Dev Pod</td>
+                  <td>13 pts</td>
+                  <td><span class="status-pill warning">In Progress</span></td>
+                  <td>Sprint 17</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 4: CYBERSECURITY & COMPLIANCE
+           ====================================================================== -->
+      <section class="tab-panel" id="tab-security">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">Cybersecurity Posture &amp; SOC2 Compliance</h1>
+            <p class="dash-page-subtitle">Continuous automated vulnerability management and compliance verification.</p>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Security Score</div>
+            <div class="kpi-value">98 / 100</div>
+            <div class="kpi-trend trend-up">Top 1% Tier Enterprise</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Open Critical Vulnerabilities</div>
+            <div class="kpi-value">0</div>
+            <div class="kpi-trend trend-up">Zero CVEs unpatched</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">SOC2 Type II Attestation</div>
+            <div class="kpi-value">Certified</div>
+            <div class="kpi-trend trend-up">Valid through Dec 2027</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Penetration Test Report</div>
+            <div class="kpi-value">Grade A+</div>
+            <div class="kpi-trend trend-up">Audit by Stackly Red Team</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 5: ADVISORY TEAM
+           ====================================================================== -->
+      <section class="tab-panel" id="tab-advisory">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">Dedicated Stackly Advisory Pod</h1>
+            <p class="dash-page-subtitle">Direct access to your assigned principal architects and enterprise advisors.</p>
+          </div>
+        </div>
+
+        <div class="consultant-pod-grid">
+          <!-- Arun Kumar -->
+          <div class="consultant-card">
+            <img src="assets/images/team-1.webp" alt="Arun Kumar" class="consultant-avatar">
+            <h3 class="consultant-name">Arun Kumar</h3>
+            <div class="consultant-role">Managing Principal Consultant</div>
+            <p style="font-size:0.8rem; color:#64748b; margin-bottom:14px;">18+ years enterprise architecture advisory, multi-cloud strategy for Global 500.</p>
+            <button type="button" class="consultant-contact-btn open-modal-action">Book Consultation</button>
+          </div>
+
+          <!-- Priya Sharma -->
+          <div class="consultant-card">
+            <img src="assets/images/team-2.webp" alt="Priya Sharma" class="consultant-avatar">
+            <h3 class="consultant-name">Priya Sharma</h3>
+            <div class="consultant-role">Chief Technology Officer</div>
+            <p style="font-size:0.8rem; color:#64748b; margin-bottom:14px;">Specialist in event-driven systems, AI pipelines, and large-scale ERP migrations.</p>
+            <button type="button" class="consultant-contact-btn open-modal-action">Book Consultation</button>
+          </div>
+
+          <!-- Vikram R -->
+          <div class="consultant-card">
+            <img src="assets/images/team-3.webp" alt="Vikram R" class="consultant-avatar">
+            <h3 class="consultant-name">Vikram R</h3>
+            <div class="consultant-role">Lead Cloud Architect</div>
+            <p style="font-size:0.8rem; color:#64748b; margin-bottom:14px;">AWS &amp; Azure certified architect, Kubernetes containerization specialist.</p>
+            <button type="button" class="consultant-contact-btn open-modal-action">Book Consultation</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 6: INVOICES & RETAINERS
+           ====================================================================== -->
+      <section class="tab-panel" id="tab-invoices">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">Invoices &amp; Consulting Retainers</h1>
+            <p class="dash-page-subtitle">Itemized accounting for retainer hours, cloud optimization credits, and milestone statements.</p>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h2 class="dash-card-title">Billing Statements &amp; Payment History</h2>
+            <span class="status-pill success">Account in Good Standing</span>
+          </div>
+
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Invoice ID</th>
+                  <th>Billing Period</th>
+                  <th>Service Scope</th>
+                  <th>Amount</th>
+                  <th>Payment Status</th>
+                  <th>Invoice PDF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="code-badge">STK-2026-114</span></td>
+                  <td>Nov 01 &ndash; Nov 30, 2026</td>
+                  <td>Enterprise Cloud &amp; DevOps Dedicated Pod Retainer</td>
+                  <td>$24,000.00</td>
+                  <td><span class="status-pill success">Paid</span></td>
+                  <td><a href="404.html" style="color:#1c7aec; font-weight:700;">Download PDF</a></td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">STK-2026-103</span></td>
+                  <td>Oct 01 &ndash; Oct 31, 2026</td>
+                  <td>Enterprise Cloud Retainer + Penetration Audit</td>
+                  <td>$28,500.00</td>
+                  <td><span class="status-pill success">Paid</span></td>
+                  <td><a href="404.html" style="color:#1c7aec; font-weight:700;">Download PDF</a></td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">STK-2026-091</span></td>
+                  <td>Sep 01 &ndash; Sep 30, 2026</td>
+                  <td>Architecture Discovery &amp; AWS EKS Migration</td>
+                  <td>$32,000.00</td>
+                  <td><span class="status-pill success">Paid</span></td>
+                  <td><a href="404.html" style="color:#1c7aec; font-weight:700;">Download PDF</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 7: SUPPORT SLA & TICKETS
+           ====================================================================== -->
+      <section class="tab-panel" id="tab-support">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">24/7 Managed IT Support &amp; SLA</h1>
+            <p class="dash-page-subtitle">Guaranteed 15-minute critical response time backed by dedicated enterprise engineers.</p>
+          </div>
+          <div class="dash-header-actions">
+            <button type="button" class="btn-top-action" id="openTicketModalBtn2">
+              <span>+ Open Support Ticket</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h2 class="dash-card-title">Support Ticket Queue</h2>
+            <span class="status-pill info">Average Response: 8.5 Mins</span>
+          </div>
+
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Ticket ID</th>
+                  <th>Subject</th>
+                  <th>Priority</th>
+                  <th>Category</th>
+                  <th>Assigned Agent</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="code-badge">TCK-8841</span></td>
+                  <td>VPC Peering Request between AWS and Azure eu-west</td>
+                  <td><span class="status-pill info">Medium</span></td>
+                  <td>Cloud Networking</td>
+                  <td>Vikram R</td>
+                  <td><span class="status-pill warning">In Progress</span></td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">TCK-8839</span></td>
+                  <td>Okta SSO SAML Certificate Expiration Refresh</td>
+                  <td><span class="status-pill warning">High</span></td>
+                  <td>Identity &amp; Access</td>
+                  <td>Sneha K</td>
+                  <td><span class="status-pill success">Resolved</span></td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">TCK-8822</span></td>
+                  <td>Scale EKS worker nodes for holiday volume peak</td>
+                  <td><span class="status-pill info">Medium</span></td>
+                  <td>Infrastructure</td>
+                  <td>DevOps SLA Team</td>
+                  <td><span class="status-pill success">Resolved</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 1: REQUEST ARCHITECTURE REVIEW
+       ========================================================================== -->
+  <div class="dash-modal-overlay" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle">
+    <div class="dash-modal-card">
+      <button type="button" class="dash-modal-close" aria-label="Close modal">&times;</button>
+      <h3 class="dash-modal-title" id="reviewModalTitle">Schedule Architecture Review</h3>
+      <p class="dash-modal-subtitle">Meet with Principal Consultant Arun Kumar or Lead Architect Vikram R.</p>
+
+      <form id="reviewModalForm">
+        <div class="modal-form-group">
+          <label class="modal-form-label" for="reviewTopic">Review Objective</label>
+          <select id="reviewTopic" class="modal-form-control" required>
+            <option value="cloud-scale">Cloud Cluster Scaling &amp; Kubernetes Optimization</option>
+            <option value="security-audit">Zero-Trust Security &amp; Compliance Sign-off</option>
+            <option value="api-integration">Enterprise API &amp; Microservices Review</option>
+            <option value="sprint-planning">Quarterly Roadmap &amp; Budget Planning</option>
+          </select>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-form-label" for="reviewDate">Preferred Date</label>
+          <input type="date" id="reviewDate" class="modal-form-control" required>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-form-label" for="reviewNotes">Discussion Notes</label>
+          <textarea id="reviewNotes" class="modal-form-control" rows="3" placeholder="Key topics or questions for our principal architects..."></textarea>
+        </div>
+
+        <button type="submit" class="modal-btn-submit">Confirm Architecture Session</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: OPEN NEW SUPPORT TICKET
+       ========================================================================== -->
+  <div class="dash-modal-overlay" id="ticketModal" role="dialog" aria-modal="true" aria-labelledby="ticketModalTitle">
+    <div class="dash-modal-card">
+      <button type="button" class="dash-modal-close" aria-label="Close modal">&times;</button>
+      <h3 class="dash-modal-title" id="ticketModalTitle">Submit Managed IT Ticket</h3>
+      <p class="dash-modal-subtitle">Guaranteed 15-minute SLA triage by Stackly's 24/7 Operations Center.</p>
+
+      <form id="ticketModalForm">
+        <div class="modal-form-group">
+          <label class="modal-form-label" for="ticketSubject">Issue Summary *</label>
+          <input type="text" id="ticketSubject" class="modal-form-control" placeholder="e.g. AWS EKS Node Group memory alert" required>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-form-label" for="ticketSeverity">Severity Level</label>
+          <select id="ticketSeverity" class="modal-form-control" required>
+            <option value="p3">P3 &bull; Normal (Service operational, guidance needed)</option>
+            <option value="p2">P2 &bull; High (Degraded performance or staging issue)</option>
+            <option value="p1">P1 &bull; Critical (Production down / business halted)</option>
+          </select>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-form-label" for="ticketCategory">Category</label>
+          <select id="ticketCategory" class="modal-form-control" required>
+            <option value="cloud">Cloud Infrastructure &amp; DevOps</option>
+            <option value="network">VPN &amp; Mesh Networking</option>
+            <option value="security">Identity, IAM &amp; Security</option>
+            <option value="database">Database &amp; Data Pipeline</option>
+          </select>
+        </div>
+
+        <div class="modal-form-group">
+          <label class="modal-form-label" for="ticketDetails">Details &amp; Reproduction Steps</label>
+          <textarea id="ticketDetails" class="modal-form-control" rows="3" placeholder="Describe any relevant logs, cluster IDs, or steps..."></textarea>
+        </div>
+
+        <button type="submit" class="modal-btn-submit">Dispatch Ticket to Engineering</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DASHBOARD INTERACTION SCRIPT
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Tab Switching
+      const sidebarItems = document.querySelectorAll('.sidebar-item[data-tab]');
+      const tabPanels = document.querySelectorAll('.tab-panel');
+
+      function activateTab(tabId) {
+        sidebarItems.forEach(item => {
+          if (item.getAttribute('data-tab') === tabId) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+
+        tabPanels.forEach(panel => {
+          if (panel.id === tabId) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      sidebarItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const tabId = item.getAttribute('data-tab');
+          activateTab(tabId);
+          // close mobile sidebar if open
+          closeMobileSidebar();
+        });
+      });
+
+      // Handle URL Hash Navigation (e.g. userdashboard.html#cloud)
+      if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const targetTab = document.getElementById(`tab-${hash}`) ? `tab-${hash}` : (document.getElementById(hash) ? hash : null);
+        if (targetTab) {
+          activateTab(targetTab);
+        }
+      }
+
+      // 2. Mobile Sidebar Drawer
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+      const sidebar = document.getElementById('dashSidebar');
+      const backdrop = document.getElementById('sidebarBackdrop');
+
+      function openMobileSidebar() {
+        sidebar.classList.add('open');
+        backdrop.classList.add('active');
+      }
+
+      function closeMobileSidebar() {
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('active');
+      }
+
+      if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileSidebar);
+      if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeMobileSidebar);
+      if (backdrop) backdrop.addEventListener('click', closeMobileSidebar);
+
+      // 3. Dropdowns (Notifications & User Profile)
+      const notifBellBtn = document.getElementById('notifBellBtn');
+      const notifDropdown = document.getElementById('notifDropdown');
+      const userProfileBtn = document.getElementById('userProfileBtn');
+      const profileDropdown = document.getElementById('profileDropdown');
+
+      if (notifBellBtn && notifDropdown) {
+        notifBellBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          notifDropdown.classList.toggle('show');
+          if (profileDropdown) profileDropdown.classList.remove('show');
+        });
+      }
+
+      if (userProfileBtn && profileDropdown) {
+        userProfileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          profileDropdown.classList.toggle('show');
+          if (notifDropdown) notifDropdown.classList.remove('show');
+        });
+      }
+
+      document.addEventListener('click', () => {
+        if (notifDropdown) notifDropdown.classList.remove('show');
+        if (profileDropdown) profileDropdown.classList.remove('show');
+      });
+
+      // 4. Modals (Review & Ticket)
+      const reviewModal = document.getElementById('reviewModal');
+      const ticketModal = document.getElementById('ticketModal');
+
+      const openReviewBtn = document.getElementById('openReviewModalBtn');
+      const openTicketBtn = document.getElementById('openTicketModalBtn');
+      const openTicketBtn2 = document.getElementById('openTicketModalBtn2');
+
+      if (openReviewBtn) {
+        openReviewBtn.addEventListener('click', () => {
+          reviewModal.classList.add('show');
+        });
+      }
+
+      document.querySelectorAll('.open-modal-action').forEach(btn => {
+        btn.addEventListener('click', () => {
+          reviewModal.classList.add('show');
+        });
+      });
+
+      if (openTicketBtn) {
+        openTicketBtn.addEventListener('click', () => {
+          ticketModal.classList.add('show');
+        });
+      }
+      if (openTicketBtn2) {
+        openTicketBtn2.addEventListener('click', () => {
+          ticketModal.classList.add('show');
+        });
+      }
+
+      document.querySelectorAll('.dash-modal-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+          reviewModal.classList.remove('show');
+          ticketModal.classList.remove('show');
+        });
+      });
+
+      [reviewModal, ticketModal].forEach(modal => {
+        if (modal) {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.classList.remove('show');
+            }
+          });
+        }
+      });
+
+      // Modal Form Submit handlers with user feedback
+      const reviewForm = document.getElementById('reviewModalForm');
+      if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert('Architecture review session booked successfully! Arun Kumar and Vikram R will confirm the calendar invite.');
+          reviewModal.classList.remove('show');
+          reviewForm.reset();
+        });
+      }
+
+      const ticketForm = document.getElementById('ticketModalForm');
+      if (ticketForm) {
+        ticketForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const subject = document.getElementById('ticketSubject').value;
+          alert(`Support Ticket created: "${subject}". Our 24/7 DevOps team is triaging immediately.`);
+          ticketModal.classList.remove('show');
+          ticketForm.reset();
+        });
+      }
+    });
+  </script>
+  <!-- GSAP Animation Engine & Micro-Interactions -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

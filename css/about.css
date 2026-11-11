@@ -1,0 +1,726 @@
+/* ==========================================================================
+   STACKIN IT CONSULTING - ABOUT PAGE STYLESHEET (about.css)
+   Exact Figma Design Implementation
+   ========================================================================== */
+
+/* ==========================================================================
+   1. PAGE HERO (ABOUT HERO WITH BREADCRUMB)
+   ========================================================================== */
+.about-hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #011e48 0%, #032b69 50%, #0a3d8f 100%);
+  color: var(--text-white);
+  padding: 60px 0 100px;
+  overflow: hidden;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.about-hero-content {
+  z-index: 2;
+}
+
+.breadcrumb-trail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.breadcrumb-trail a {
+  color: #94a3b8;
+  transition: var(--transition-fast);
+}
+
+.breadcrumb-trail a:hover {
+  color: #ffffff;
+}
+
+.breadcrumb-trail span {
+  color: #64748b;
+}
+
+.about-hero-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.about-hero-desc {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.about-hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.about-hero-frame img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-hero-frame:hover img {
+  transform: scale(1.03);
+}
+
+.about-hero-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(1, 30, 72, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.about-hero-badge strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   2. WHO WE ARE (PARTNER SECTION)
+   ========================================================================== */
+.who-we-are-section {
+  padding: 90px 0;
+  background-color: var(--bg-page);
+}
+
+.who-we-are-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 0.8fr;
+  align-items: center;
+  gap: 36px;
+}
+
+.who-text-col .section-badge {
+  margin-bottom: 10px;
+}
+
+.who-text-col .section-title {
+  margin-bottom: 20px;
+  font-size: 2.25rem;
+}
+
+.who-text-col p {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.who-text-col .btn {
+  margin-top: 10px;
+}
+
+.who-image-col {
+  position: relative;
+}
+
+.who-image-frame {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 4px solid #ffffff;
+}
+
+.who-image-frame img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.who-image-frame:hover img {
+  transform: scale(1.03);
+}
+
+.who-stats-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.who-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 20px 22px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.who-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(28, 122, 236, 0.35);
+  box-shadow: var(--shadow-card);
+}
+
+.who-stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-light-blue);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.who-stat-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.who-stat-info .stat-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  line-height: 1.1;
+}
+
+.who-stat-info .stat-lbl {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   3. CORE VALUES (WHAT DRIVES US)
+   ========================================================================== */
+.values-section {
+  padding: 90px 0;
+  background-color: var(--bg-light-blue);
+}
+
+.values-header-wrap {
+  margin-bottom: 48px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 36px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: var(--transition-smooth);
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(28, 122, 236, 0.4);
+}
+
+.value-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--bg-light-blue);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: var(--transition-smooth);
+}
+
+.value-card:hover .value-icon-box {
+  background: var(--primary);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.value-icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: 10px;
+}
+
+.value-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   4. MEET THE TEAM (MEET THE EXPERTS)
+   ========================================================================== */
+.team-section {
+  padding: 90px 0;
+  background-color: var(--bg-page);
+}
+
+.team-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.team-intro-left {
+  max-width: 600px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.team-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(28, 122, 236, 0.35);
+}
+
+.team-photo-wrap {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.team-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.team-card:hover .team-photo-wrap img {
+  transform: scale(1.06);
+}
+
+.team-info {
+  padding: 22px 20px;
+  text-align: left;
+}
+
+.team-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.team-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-light-blue);
+  color: var(--navy-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.team-social-link:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.team-social-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ==========================================================================
+   5. OUR JOURNEY (A DECADE OF GROWTH TIMELINE)
+   ========================================================================== */
+.timeline-section {
+  padding: 90px 0;
+  background-color: var(--bg-light-blue);
+}
+
+.timeline-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.timeline-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.timeline-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(28, 122, 236, 0.35);
+  margin-bottom: 20px;
+  transition: var(--transition-smooth);
+}
+
+.timeline-node:hover .timeline-icon-circle {
+  background: var(--navy-900);
+  transform: scale(1.1);
+  box-shadow: 0 10px 28px rgba(1, 30, 72, 0.35);
+}
+
+.timeline-icon-circle svg {
+  width: 26px;
+  height: 26px;
+}
+
+.timeline-year {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 210px;
+}
+
+/* ==========================================================================
+   6. WHY CHOOSE US (YOUR SUCCESS, OUR COMMITMENT)
+   ========================================================================== */
+.commit-section {
+  padding: 90px 0;
+  background-color: var(--bg-page);
+}
+
+.commit-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.commit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.commit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.commit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+  border-color: rgba(28, 122, 236, 0.35);
+}
+
+.commit-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--bg-light-blue);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.commit-card:hover .commit-icon {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.commit-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.commit-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: 6px;
+}
+
+.commit-info p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   7. MISSION & VISION (DARK GLOW SECTION)
+   ========================================================================== */
+.mission-vision-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, rgba(1, 30, 72, 0.96) 0%, rgba(3, 43, 105, 0.92) 100%), url('../assets/images/mission-bg.webp') center/cover no-repeat;
+  color: #ffffff;
+  position: relative;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.mv-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 44px 38px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.mv-card:hover {
+  background: rgba(28, 122, 236, 0.15);
+  border-color: rgba(56, 189, 248, 0.45);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.mv-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.mv-card:hover .mv-icon {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.mv-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.mv-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.mv-desc {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   ABOUT PAGE RESPONSIVE QUERIES
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .who-we-are-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .who-stats-col {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .timeline-track {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-hero-title {
+    font-size: 2.75rem;
+  }
+
+  .about-hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .breadcrumb-trail {
+    justify-content: center;
+  }
+
+  .who-we-are-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .who-text-col .section-badge {
+    justify-content: center;
+  }
+
+  .who-stats-col {
+    grid-column: span 1;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-header-row,
+  .timeline-header-row,
+  .commit-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline-track {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .commit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-title {
+    font-size: 2.25rem;
+  }
+
+  .who-stats-col {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .timeline-track {
+    grid-template-columns: 1fr;
+  }
+
+  .commit-grid {
+    grid-template-columns: 1fr;
+  }
+}

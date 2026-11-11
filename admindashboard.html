@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Executive Command Center | Stackly Admin</title>
+  <meta name="description" content="Executive administration portal for managing partner oversight, enterprise client engagements, cloud fleet architectures, and global talent allocation.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/admindashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="admin-dashboard-body">
+
+  <!-- Mobile Backdrop Overlay -->
+  <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+  <!-- ==========================================================================
+       ADMIN SIDEBAR
+       ========================================================================== -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <!-- Header -->
+    <div class="admin-sidebar-header">
+      <a href="index.html" class="admin-brand" aria-label="STACKLY Home">
+        <img src="assets/images/logo.webp" alt="STACKLY" class="admin-brand-img">
+        <span class="admin-badge-role">Admin</span>
+      </a>
+      <button type="button" class="admin-close-btn" id="adminSidebarCloseBtn" aria-label="Close sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Practice Overview Pill -->
+    <div class="admin-practice-pill">
+      <div class="admin-hq-avatar">HQ</div>
+      <div class="admin-practice-meta">
+        <span class="practice-title">Stackly Practice HQ</span>
+        <span class="practice-subtitle">Global Enterprise Center</span>
+      </div>
+    </div>
+
+    <!-- Practice Navigation -->
+    <nav class="admin-nav" aria-label="Practice Management Navigation">
+      <div class="admin-nav-heading">Practice Management</div>
+
+      <!-- Tab 1: Executive Overview -->
+      <button type="button" class="admin-nav-item active" data-tab="admin-tab-overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Executive Overview</span>
+      </button>
+
+      <!-- Tab 2: Client Accounts -->
+      <button type="button" class="admin-nav-item" data-tab="admin-tab-clients">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Client Engagements</span>
+        <span class="admin-badge highlight">48</span>
+      </button>
+
+      <!-- Tab 3: Consultants Roster -->
+      <button type="button" class="admin-nav-item" data-tab="admin-tab-talent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Architects &amp; Talent</span>
+        <span class="admin-badge">91.4%</span>
+      </button>
+
+      <!-- Tab 4: RFP Pipeline -->
+      <button type="button" class="admin-nav-item" data-tab="admin-tab-pipeline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        <span>RFP &amp; Deals Pipeline</span>
+      </button>
+
+      <div class="admin-nav-heading">Infrastructure &amp; Finance</div>
+
+      <!-- Tab 5: Cloud Fleet -->
+      <button type="button" class="admin-nav-item" data-tab="admin-tab-cloudfleet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+        </svg>
+        <span>Cloud Fleet Monitor</span>
+      </button>
+
+      <!-- Tab 6: Financials -->
+      <button type="button" class="admin-nav-item" data-tab="admin-tab-financials">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"></line>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        <span>Practice Financials</span>
+      </button>
+
+      <!-- Tab 7: Audit & Governance -->
+      <button type="button" class="admin-nav-item" data-tab="admin-tab-audit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>System Audit &amp; SOC2</span>
+      </button>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="admin-sidebar-footer">
+      <a href="index.html" class="admin-footer-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Live Website Preview</span>
+      </a>
+      <a href="login.html" class="admin-footer-link" style="color: #ef4444;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Exit Admin Session</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT WRAPPER
+       ========================================================================== -->
+  <div class="admin-main-wrap">
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div class="admin-topbar-left">
+        <button type="button" class="admin-mobile-toggle" id="adminMobileToggle" aria-label="Toggle navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="admin-search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="admin-search-input" placeholder="Search enterprise clients, contracts, architects..." aria-label="Search admin portal">
+        </div>
+      </div>
+
+      <div class="admin-topbar-right">
+        <!-- Live Practice Telemetry -->
+        <div class="practice-telemetry-pill">
+          <span class="telemetry-dot"></span>
+          <span>Practice Telemetry: Global SLA Normal</span>
+        </div>
+
+        <!-- Notifications -->
+        <div class="admin-action-container">
+          <button type="button" class="admin-icon-btn" id="adminNotifBtn" aria-label="Practice Alerts">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="admin-notif-count">4</span>
+          </button>
+
+          <div class="admin-dropdown-menu" id="adminNotifDropdown">
+            <div class="admin-dropdown-header">
+              <span class="admin-dropdown-title">Executive Alerts</span>
+              <span style="font-size:0.75rem; font-weight:700; color:#1c7aec;">4 Critical</span>
+            </div>
+            <div style="max-height: 280px; overflow-y: auto;">
+              <a href="#admin-tab-clients" class="admin-dropdown-item unread">
+                <span class="admin-dropdown-item-title">Contract Renewal: FinVanguard $320k</span>
+                <span class="admin-dropdown-item-time">Multi-cloud retainer renewal due in 14 days</span>
+              </a>
+              <a href="#admin-tab-cloudfleet" class="admin-dropdown-item unread">
+                <span class="admin-dropdown-item-title">Latency Alert: TATA ERP Gateway</span>
+                <span class="admin-dropdown-item-time">Traffic spike auto-scaled pods to 96 units &bull; 18m ago</span>
+              </a>
+              <a href="#admin-tab-talent" class="admin-dropdown-item unread">
+                <span class="admin-dropdown-item-title">Consultant Allocation: Pod Gamma Free</span>
+                <span class="admin-dropdown-item-time">Lead architect Vikram R completed milestone 14</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Action: New Engagement -->
+        <button type="button" class="btn-admin-primary" id="openNewClientModalBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>New Engagement</span>
+        </button>
+
+        <!-- Executive Profile Menu -->
+        <div class="admin-action-container">
+          <button type="button" class="admin-profile-btn" id="adminProfileBtn">
+            <div class="admin-avatar">AK</div>
+            <div class="admin-profile-meta">
+              <span class="admin-profile-name">Arun Kumar</span>
+              <span class="admin-profile-role">Managing Partner</span>
+            </div>
+          </button>
+
+          <div class="admin-dropdown-menu" id="adminProfileDropdown" style="width: 240px;">
+            <div class="admin-dropdown-header">
+              <div>
+                <p style="font-size:0.875rem; font-weight:700; color:#011e48;">Arun Kumar</p>
+                <p style="font-size:0.75rem; color:#64748b;">arun.kumar@stackly.com</p>
+              </div>
+            </div>
+            <a href="#admin-tab-overview" class="admin-dropdown-item">Executive Settings</a>
+            <a href="#admin-tab-financials" class="admin-dropdown-item">Practice P&amp;L Statements</a>
+            <a href="index.html" class="admin-dropdown-item">View Public Website</a>
+            <a href="login.html" class="admin-dropdown-item" style="color:#ef4444; font-weight:700;">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="admin-content">
+
+      <!-- ======================================================================
+           TAB 1: EXECUTIVE OVERVIEW
+           ====================================================================== -->
+      <section class="admin-tab-panel active" id="admin-tab-overview">
+        <div class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">Executive Command Overview</h1>
+            <p class="admin-page-subtitle">Firm-wide telemetry across global consulting engagements, consultant billability, and ARR.</p>
+          </div>
+          <div class="admin-header-actions">
+            <span class="status-pill success">Q4 Target: On Pace</span>
+          </div>
+        </div>
+
+        <!-- 4 Global KPI Cards -->
+        <div class="admin-kpi-grid">
+          <!-- KPI 1 -->
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-top">
+              <span class="admin-kpi-label">Annual Recurring Revenue</span>
+              <div class="admin-kpi-icon" style="background:#e0f2fe; color:#0284c7;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">$18.4M</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+              <span>+14.2% YoY growth</span>
+            </div>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-top">
+              <span class="admin-kpi-label">Active Enterprise Clients</span>
+              <div class="admin-kpi-icon" style="background:#dcfce7; color:#059669;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">48 Accounts</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">
+              <span>98% on-time milestone delivery</span>
+            </div>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-top">
+              <span class="admin-kpi-label">Consultant Billable Utilization</span>
+              <div class="admin-kpi-icon" style="background:#ede9fe; color:#7c3aed;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">91.4%</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">
+              <span>Target: &gt; 85% utilization</span>
+            </div>
+          </div>
+
+          <!-- KPI 4 -->
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-top">
+              <span class="admin-kpi-label">Client CSAT Score</span>
+              <div class="admin-kpi-icon" style="background:#fef3c7; color:#d97706;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">4.9 / 5.0</div>
+            <div class="admin-kpi-trend" style="color:#64748b;">
+              <span>Based on 120+ client reviews</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Grid: Revenue Bars + Active Delivery Pods -->
+        <div class="admin-grid-2col">
+          <!-- Practice Monthly Revenue -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2 class="admin-card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span>2026 Monthly Practice Revenue ($M)</span>
+              </h2>
+              <span class="status-pill success">+18.5% Growth</span>
+            </div>
+
+            <div class="revenue-bar-chart">
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 55%;" title="May: $1.2M"></div>
+                <span class="chart-bar-label">May</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 62%;" title="Jun: $1.35M"></div>
+                <span class="chart-bar-label">Jun</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 70%;" title="Jul: $1.48M"></div>
+                <span class="chart-bar-label">Jul</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 78%;" title="Aug: $1.6M"></div>
+                <span class="chart-bar-label">Aug</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 86%;" title="Sep: $1.72M"></div>
+                <span class="chart-bar-label">Sep</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 94%;" title="Oct: $1.85M"></div>
+                <span class="chart-bar-label">Oct</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar" style="height: 100%; background:linear-gradient(180deg, #10b981 0%, #011e48 100%);" title="Nov (Proj): $1.94M"></div>
+                <span class="chart-bar-label">Nov</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consultant Pod Allocation -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2 class="admin-card-title">Senior Architects Allocation</h2>
+              <span class="status-pill info">Global Roster</span>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <!-- Pod 1 -->
+              <div style="display:flex; align-items:center; gap:12px; padding:12px; border-radius:10px; background:#f8fafc; border:1px solid #e2e8f0;">
+                <img src="assets/images/team-1.webp" alt="Arun Kumar" style="width:44px; height:44px; border-radius:50%; object-fit:cover;">
+                <div style="flex:1;">
+                  <p style="font-size:0.875rem; font-weight:700; color:#011e48;">Arun Kumar</p>
+                  <p style="font-size:0.75rem; color:#64748b;">Managing Principal &bull; TATA, FinVanguard</p>
+                </div>
+                <span class="status-pill success">100% Allocated</span>
+              </div>
+
+              <!-- Pod 2 -->
+              <div style="display:flex; align-items:center; gap:12px; padding:12px; border-radius:10px; background:#f8fafc; border:1px solid #e2e8f0;">
+                <img src="assets/images/team-2.webp" alt="Priya Sharma" style="width:44px; height:44px; border-radius:50%; object-fit:cover;">
+                <div style="flex:1;">
+                  <p style="font-size:0.875rem; font-weight:700; color:#011e48;">Priya Sharma</p>
+                  <p style="font-size:0.75rem; color:#64748b;">Chief Technology Officer &bull; Infosys, Wipro</p>
+                </div>
+                <span class="status-pill success">95% Allocated</span>
+              </div>
+
+              <!-- Pod 3 -->
+              <div style="display:flex; align-items:center; gap:12px; padding:12px; border-radius:10px; background:#f8fafc; border:1px solid #e2e8f0;">
+                <img src="assets/images/team-3.webp" alt="Vikram R" style="width:44px; height:44px; border-radius:50%; object-fit:cover;">
+                <div style="flex:1;">
+                  <p style="font-size:0.875rem; font-weight:700; color:#011e48;">Vikram R</p>
+                  <p style="font-size:0.75rem; color:#64748b;">Lead Cloud Architect &bull; Apex Logistics, HCL</p>
+                </div>
+                <span class="status-pill success">90% Allocated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flagship Client Engagements Table -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Flagship Enterprise Engagements Portfolio</h2>
+            <div class="filter-tabs-row" style="margin-bottom:0;">
+              <button type="button" class="filter-tab-pill active" data-filter="all">All Accounts (48)</button>
+              <button type="button" class="filter-tab-pill" data-filter="active">Active (42)</button>
+              <button type="button" class="filter-tab-pill" data-filter="staging">In Staging (4)</button>
+              <button type="button" class="filter-tab-pill" data-filter="renewal">Renewal Due (2)</button>
+            </div>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Client Enterprise</th>
+                  <th>Engagement Scope</th>
+                  <th>Contract ARR</th>
+                  <th>Lead Partner</th>
+                  <th>Health Score</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-status="active">
+                  <td><strong>TATA Enterprise</strong></td>
+                  <td>Hybrid Cloud VPC &amp; Kafka Mesh</td>
+                  <td>$480,000 / yr</td>
+                  <td>Arun Kumar</td>
+                  <td><span class="status-pill success">99% Healthy</span></td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+                <tr data-status="active">
+                  <td><strong>Apex Global Logistics</strong></td>
+                  <td>AWS EKS Microservices &amp; Fleet API</td>
+                  <td>$288,000 / yr</td>
+                  <td>Vikram R</td>
+                  <td><span class="status-pill success">98% Healthy</span></td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+                <tr data-status="renewal">
+                  <td><strong>FinVanguard Financial</strong></td>
+                  <td>Zero Trust &amp; SOC2 Compliance Audit</td>
+                  <td>$320,000 / yr</td>
+                  <td>Sneha K</td>
+                  <td><span class="status-pill warning">Reviewing</span></td>
+                  <td><span class="status-pill warning">Renewal Due</span></td>
+                </tr>
+                <tr data-status="active">
+                  <td><strong>Infosys Digital Cloud</strong></td>
+                  <td>Multi-Cloud Terraform Automation</td>
+                  <td>$420,000 / yr</td>
+                  <td>Priya Sharma</td>
+                  <td><span class="status-pill success">97% Healthy</span></td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+                <tr data-status="staging">
+                  <td><strong>Capgemini Global</strong></td>
+                  <td>AI Data Lakehouse &amp; BigQuery</td>
+                  <td>$260,000 / yr</td>
+                  <td>Vikram R</td>
+                  <td><span class="status-pill info">Staging</span></td>
+                  <td><span class="status-pill info">In Staging</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 2: CLIENT ACCOUNTS PORTFOLIO
+           ====================================================================== -->
+      <section class="admin-tab-panel" id="admin-tab-clients">
+        <div class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">Enterprise Client Accounts</h1>
+            <p class="admin-page-subtitle">Contract life-cycle, SLAs, and dedicated consulting pod assignments.</p>
+          </div>
+          <div class="admin-header-actions">
+            <button type="button" class="btn-admin-primary" id="openNewClientModalBtn2">
+              <span>+ Add Enterprise Account</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Client Organization</th>
+                  <th>Industry</th>
+                  <th>Dedicated Pod</th>
+                  <th>SLA Tier</th>
+                  <th>Contract Term</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>TATA Consultancy Services</strong></td>
+                  <td>IT &amp; Telecommunications</td>
+                  <td>Pod Alpha (Arun Kumar)</td>
+                  <td>Platinum 24/7 (15m SLA)</td>
+                  <td>Jan 2025 &ndash; Dec 2027</td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Wipro Technologies</strong></td>
+                  <td>Enterprise Services</td>
+                  <td>Pod Beta (Priya Sharma)</td>
+                  <td>Gold Managed Pod</td>
+                  <td>Mar 2025 &ndash; Feb 2027</td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Accenture Strategic Pod</strong></td>
+                  <td>Consulting &amp; Cloud</td>
+                  <td>Pod Gamma (Vikram R)</td>
+                  <td>Enterprise Retainer</td>
+                  <td>Jun 2025 &ndash; May 2028</td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tech Mahindra Solutions</strong></td>
+                  <td>Network &amp; 5G Systems</td>
+                  <td>Pod Delta (Sneha K)</td>
+                  <td>Platinum 24/7</td>
+                  <td>Aug 2025 &ndash; Jul 2027</td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>HCL Global Technologies</strong></td>
+                  <td>DevOps &amp; Infrastructure</td>
+                  <td>Pod Alpha (Arun Kumar)</td>
+                  <td>Enterprise Retainer</td>
+                  <td>Oct 2025 &ndash; Sep 2027</td>
+                  <td><span class="status-pill success">Active</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 3: TALENT ROSTER
+           ====================================================================== -->
+      <section class="admin-tab-panel" id="admin-tab-talent">
+        <div class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">Consultants &amp; Technical Talent Roster</h1>
+            <p class="admin-page-subtitle">Senior enterprise architects, cloud engineers, and security specialists.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Consultant Name</th>
+                  <th>Role &amp; Practice Domain</th>
+                  <th>Top Certifications</th>
+                  <th>Billable Rate</th>
+                  <th>Current Utilization</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Arun Kumar</strong></td>
+                  <td>Principal Enterprise Consultant</td>
+                  <td>TOGAF 9.2 &bull; AWS Solutions Architect Pro</td>
+                  <td>$280 / hr</td>
+                  <td>96% (38 hrs/wk)</td>
+                  <td><span class="status-pill success">Fully Booked</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Priya Sharma</strong></td>
+                  <td>Chief Technology Officer</td>
+                  <td>Google Cloud Fellow &bull; CMMI Lead Assessor</td>
+                  <td>$260 / hr</td>
+                  <td>94% (37 hrs/wk)</td>
+                  <td><span class="status-pill success">Fully Booked</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Vikram R</strong></td>
+                  <td>Lead Cloud Architect</td>
+                  <td>Kubernetes CKA &bull; Azure Solutions Expert</td>
+                  <td>$220 / hr</td>
+                  <td>92% (36 hrs/wk)</td>
+                  <td><span class="status-pill success">Fully Booked</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Sneha K</strong></td>
+                  <td>VP of Cybersecurity</td>
+                  <td>CISSP &bull; CISM &bull; ISO 27001 Lead Auditor</td>
+                  <td>$240 / hr</td>
+                  <td>88% (35 hrs/wk)</td>
+                  <td><span class="status-pill info">Available for 1 Pod</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 4: RFP & DEALS PIPELINE
+           ====================================================================== -->
+      <section class="admin-tab-panel" id="admin-tab-pipeline">
+        <div class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">Enterprise RFP &amp; Deals Pipeline</h1>
+            <p class="admin-page-subtitle">Track proposal submittals, commercial negotiations, and win rates.</p>
+          </div>
+        </div>
+
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Unweighted Pipeline</div>
+            <div class="admin-kpi-value">$4.25M</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">12 Active Proposals</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Weighted Expected ARR</div>
+            <div class="admin-kpi-value">$2.84M</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">68% win-rate projection</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Average Contract Size</div>
+            <div class="admin-kpi-value">$354,000</div>
+            <div class="admin-kpi-trend" style="color:#1c7aec;">Annual Retainer Scope</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Proposal Close Cycle</div>
+            <div class="admin-kpi-value">28 Days</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">14 days faster than industry</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 5: CLOUD FLEET MONITOR
+           ====================================================================== -->
+      <section class="admin-tab-panel" id="admin-tab-cloudfleet">
+        <div class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">Global Client Cloud Fleet</h1>
+            <p class="admin-page-subtitle">Centralized observability across 142 managed Kubernetes clusters globally.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Cloud Environment</th>
+                  <th>Tenant Accounts</th>
+                  <th>Total Active Pods</th>
+                  <th>Uptime SLA</th>
+                  <th>Automated Incident Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>AWS Multi-Region (us-east, eu-west, ap-south)</strong></td>
+                  <td>28 Client Tenants</td>
+                  <td>1,840 Pods</td>
+                  <td>99.994%</td>
+                  <td><span class="status-pill success">Zero Critical Alarms</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Azure Enterprise AKS (East US, West Europe)</strong></td>
+                  <td>14 Client Tenants</td>
+                  <td>920 Pods</td>
+                  <td>99.991%</td>
+                  <td><span class="status-pill success">Zero Critical Alarms</span></td>
+                </tr>
+                <tr>
+                  <td><strong>GCP BigQuery &amp; Cloud Run</strong></td>
+                  <td>6 Client Tenants</td>
+                  <td>Serverless</td>
+                  <td>100.000%</td>
+                  <td><span class="status-pill success">Zero Critical Alarms</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 6: PRACTICE FINANCIALS
+           ====================================================================== -->
+      <section class="admin-tab-panel" id="admin-tab-financials">
+        <div class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">Practice Financials &amp; Gross Margins</h1>
+            <p class="admin-page-subtitle">Monthly billings, consultant payroll allocation, and gross profit margins.</p>
+          </div>
+        </div>
+
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Gross Margin</div>
+            <div class="admin-kpi-value">42.8%</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">Target: 40%</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Accounts Receivable (30d)</div>
+            <div class="admin-kpi-value">$214,000</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">98% Collected On Time</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Annual Client Retention</div>
+            <div class="admin-kpi-value">96.4%</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">Industry Leading</div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-label">Average Net Expansion</div>
+            <div class="admin-kpi-value">+22% YoY</div>
+            <div class="admin-kpi-trend" style="color:#10b981;">Existing Clients Scaling</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           TAB 7: AUDIT & GOVERNANCE
+           ====================================================================== -->
+      <section class="admin-tab-panel" id="admin-tab-audit">
+        <div class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">System Audit &amp; SOC2 Governance</h1>
+            <p class="admin-page-subtitle">Immutable compliance logs, ISO 27001 access controls, and security posture.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Recent Administrative Audit Events</h2>
+            <span class="status-pill success">Tamper-Proof WORM Log</span>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Event ID</th>
+                  <th>Action</th>
+                  <th>Initiated By</th>
+                  <th>IP &bull; Region</th>
+                  <th>Timestamp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="code-badge">AUD-9914</span></td>
+                  <td>Granted Cloud Cluster Access to Apex Logistics Pod</td>
+                  <td>Arun Kumar (Partner)</td>
+                  <td>192.0.2.14 (HQ)</td>
+                  <td>Today, 10:14 AM</td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">AUD-9912</span></td>
+                  <td>Quarterly SOC2 Type II Automated Attestation Report</td>
+                  <td>System Daemon</td>
+                  <td>Cloud Worker (us-east)</td>
+                  <td>Nov 09, 2026</td>
+                </tr>
+                <tr>
+                  <td><span class="code-badge">AUD-9908</span></td>
+                  <td>Role Permissions Update for DevOps Engineer Pod</td>
+                  <td>Sneha K (VP Cyber)</td>
+                  <td>198.51.100.8 (HQ)</td>
+                  <td>Nov 07, 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: NEW CLIENT ENGAGEMENT ONBOARDING
+       ========================================================================== -->
+  <div class="admin-modal-overlay" id="newClientModal" role="dialog" aria-modal="true" aria-labelledby="newClientModalTitle">
+    <div class="admin-modal-card">
+      <button type="button" class="admin-modal-close" aria-label="Close modal">&times;</button>
+      <h3 style="font-size:1.35rem; font-weight:800; color:#011e48; margin-bottom:6px;" id="newClientModalTitle">Onboard New Enterprise Client</h3>
+      <p style="font-size:0.875rem; color:#64748b; margin-bottom:20px;">Initialize cloud pod allocation, contract SLA terms, and lead partner assignment.</p>
+
+      <form id="newClientForm">
+        <div style="margin-bottom:16px;">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:#011e48; margin-bottom:6px;" for="clientOrgName">Enterprise Organization Name *</label>
+          <input type="text" id="clientOrgName" class="admin-search-input" style="width:100%; border:1.5px solid #e2e8f0; border-radius:8px; padding:10px 14px; background:#fff;" placeholder="e.g. Siemens Global Energy" required>
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:#011e48; margin-bottom:6px;" for="serviceEngagement">Primary Practice Domain</label>
+          <select id="serviceEngagement" style="width:100%; border:1.5px solid #e2e8f0; border-radius:8px; padding:10px 14px; font-family:inherit; font-size:0.9rem;" required>
+            <option value="cloud">Cloud Migration &amp; Multi-Cloud Architecture</option>
+            <option value="software">Custom Software &amp; Enterprise APIs</option>
+            <option value="cyber">Zero-Trust Cybersecurity &amp; SOC2 Audit</option>
+            <option value="transformation">Digital Transformation &amp; Automation</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:#011e48; margin-bottom:6px;" for="leadArchitect">Lead Managing Partner</label>
+          <select id="leadArchitect" style="width:100%; border:1.5px solid #e2e8f0; border-radius:8px; padding:10px 14px; font-family:inherit; font-size:0.9rem;" required>
+            <option value="arun">Arun Kumar &bull; Principal Partner</option>
+            <option value="priya">Priya Sharma &bull; Chief Technology Officer</option>
+            <option value="vikram">Vikram R &bull; Lead Cloud Architect</option>
+            <option value="sneha">Sneha K &bull; VP of Cybersecurity</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:#011e48; margin-bottom:6px;" for="contractArr">Contract ARR ($USD)</label>
+          <input type="text" id="contractArr" class="admin-search-input" style="width:100%; border:1.5px solid #e2e8f0; border-radius:8px; padding:10px 14px; background:#fff;" placeholder="$280,000 / yr" required>
+        </div>
+
+        <button type="submit" class="btn-admin-primary" style="width:100%; justify-content:center; padding:12px; font-size:0.95rem;">
+          Initialize Engagement &amp; Deploy Pod
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ADMIN INTERACTION SCRIPT
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Tab Navigation
+      const navItems = document.querySelectorAll('.admin-nav-item[data-tab]');
+      const tabPanels = document.querySelectorAll('.admin-tab-panel');
+
+      function activateAdminTab(tabId) {
+        navItems.forEach(item => {
+          if (item.getAttribute('data-tab') === tabId) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+
+        tabPanels.forEach(panel => {
+          if (panel.id === tabId) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const tabId = item.getAttribute('data-tab');
+          activateAdminTab(tabId);
+          closeMobileAdminSidebar();
+        });
+      });
+
+      // Handle Hash URLs (e.g. admindashboard.html#clients)
+      if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const targetId = document.getElementById(`admin-tab-${hash}`) ? `admin-tab-${hash}` : (document.getElementById(hash) ? hash : null);
+        if (targetId) {
+          activateAdminTab(targetId);
+        }
+      }
+
+      // 2. Mobile Sidebar Drawer
+      const toggleBtn = document.getElementById('adminMobileToggle');
+      const closeBtn = document.getElementById('adminSidebarCloseBtn');
+      const sidebar = document.getElementById('adminSidebar');
+      const backdrop = document.getElementById('adminSidebarBackdrop');
+
+      function openMobileAdminSidebar() {
+        sidebar.classList.add('open');
+        backdrop.classList.add('active');
+      }
+
+      function closeMobileAdminSidebar() {
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('active');
+      }
+
+      if (toggleBtn) toggleBtn.addEventListener('click', openMobileAdminSidebar);
+      if (closeBtn) closeBtn.addEventListener('click', closeMobileAdminSidebar);
+      if (backdrop) backdrop.addEventListener('click', closeMobileAdminSidebar);
+
+      // 3. Dropdowns
+      const notifBtn = document.getElementById('adminNotifBtn');
+      const notifDropdown = document.getElementById('adminNotifDropdown');
+      const profileBtn = document.getElementById('adminProfileBtn');
+      const profileDropdown = document.getElementById('adminProfileDropdown');
+
+      if (notifBtn && notifDropdown) {
+        notifBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          notifDropdown.classList.toggle('show');
+          if (profileDropdown) profileDropdown.classList.remove('show');
+        });
+      }
+
+      if (profileBtn && profileDropdown) {
+        profileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          profileDropdown.classList.toggle('show');
+          if (notifDropdown) notifDropdown.classList.remove('show');
+        });
+      }
+
+      document.addEventListener('click', () => {
+        if (notifDropdown) notifDropdown.classList.remove('show');
+        if (profileDropdown) profileDropdown.classList.remove('show');
+      });
+
+      // 4. Client Portfolio Status Filter Pills
+      const filterPills = document.querySelectorAll('.filter-tab-pill[data-filter]');
+      const clientRows = document.querySelectorAll('tbody tr[data-status]');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const filter = pill.getAttribute('data-filter');
+          clientRows.forEach(row => {
+            const status = row.getAttribute('data-status');
+            if (filter === 'all' || status === filter) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 5. Onboarding Modal
+      const modal = document.getElementById('newClientModal');
+      const openBtn1 = document.getElementById('openNewClientModalBtn');
+      const openBtn2 = document.getElementById('openNewClientModalBtn2');
+
+      [openBtn1, openBtn2].forEach(btn => {
+        if (btn) {
+          btn.addEventListener('click', () => {
+            modal.classList.add('show');
+          });
+        }
+      });
+
+      document.querySelectorAll('.admin-modal-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+          modal.classList.remove('show');
+        });
+      });
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('show');
+          }
+        });
+      }
+
+      const clientForm = document.getElementById('newClientForm');
+      if (clientForm) {
+        clientForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const org = document.getElementById('clientOrgName').value;
+          alert(`Enterprise Client "${org}" onboarded successfully! Dedicated consulting pod and cloud workspace generated.`);
+          modal.classList.remove('show');
+          clientForm.reset();
+        });
+      }
+    });
+  </script>
+  <!-- GSAP Animation Engine & Micro-Interactions -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

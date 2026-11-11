@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Blog &amp; Insights | Stackly IT Consulting Corporate &amp; Business</title>
+  <meta name="description" content="Stay ahead with the latest trends, insights, and expert advice in technology, cloud computing, cybersecurity, and digital transformation from Stackly.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER / NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container navbar-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="STACKLY Home">
+        <img src="assets/images/logo.webp" alt="STACKLY" class="site-logo-img">
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" id="primaryNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="casestudies.html" class="nav-link">Case Studies</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+
+        <!-- Mobile-only actions inside drawer -->
+        <div class="mobile-nav-actions">
+          <div class="nav-search-wrap">
+            <input type="text" class="nav-search-input" placeholder="Search for programs..." aria-label="Search">
+          </div>
+          <a href="login.html" class="nav-user-auth">
+            <svg viewBox="0 0 24 24" class="user-icon-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Login / Sign Up</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Desktop Navigation Actions -->
+      <div class="nav-actions">
+        <div class="nav-search-wrap desktop-only">
+          <input type="text" class="nav-search-input" placeholder="Search for programs..." aria-label="Search">
+        </div>
+        <a href="login.html" class="nav-user-auth desktop-only">
+          <svg viewBox="0 0 24 24" class="user-icon-svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login / Sign Up</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         BLOG HERO SECTION
+         ========================================================================== -->
+    <section class="blog-hero-section">
+      <div class="container">
+        <div class="blog-hero-grid">
+          <!-- Left Content -->
+          <div class="blog-hero-content reveal">
+            <div class="breadcrumb-trail">
+              <a href="index.html">Home</a>
+              <span>&gt;</span>
+              <strong>Blog</strong>
+            </div>
+            <h1 class="blog-hero-title macbook-text-shimmer-light">Our Blog</h1>
+            <p class="blog-hero-desc">
+              Stay ahead with the latest trends, insights, and expert advice in technology, business, and digital transformation.
+            </p>
+          </div>
+
+          <!-- Right Visual -->
+          <div class="blog-hero-visual reveal delay-200">
+            <div class="blog-hero-frame">
+              <img src="assets/images/blog-hero.webp" alt="Technology Insights and Innovation" width="600" height="380" loading="eager">
+              <div class="blog-hero-badge animate-float">
+                <div class="float-badge-icon">✓</div>
+                <strong>Insights, Ideas, Innovation</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MAIN BLOG FEED SECTION (9 ARTICLES GRID)
+         ========================================================================== -->
+    <section class="blog-feed-section" id="blog-articles">
+      <div class="container">
+        <div class="section-badge reveal">LATEST BLOG</div>
+        <h2 class="section-title reveal">Insights for a Smarter Tomorrow</h2>
+        <p class="section-subtitle reveal" style="margin-bottom: 40px;">
+          Explore in-depth articles, expert perspectives, and actionable guides to help your business navigate the changing world of technology and modern strategy.
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="blog-category-filter reveal">
+          <button class="blog-filter-btn active" data-filter="all">All Articles</button>
+          <button class="blog-filter-btn" data-filter="cloud">Cloud Technology</button>
+          <button class="blog-filter-btn" data-filter="ai">Artificial Intelligence</button>
+          <button class="blog-filter-btn" data-filter="security">Cybersecurity</button>
+          <button class="blog-filter-btn" data-filter="digital">Digital Transformation</button>
+          <button class="blog-filter-btn" data-filter="web">Web Development</button>
+          <button class="blog-filter-btn" data-filter="mobile">Mobile Apps</button>
+          <button class="blog-filter-btn" data-filter="strategy">Business Strategy</button>
+        </div>
+
+        <!-- 9 Articles Grid -->
+        <div class="blog-cards-grid">
+          <!-- Article 1 -->
+          <article class="blog-article-card reveal delay-100" data-category="cloud">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-cloud-computing.webp" alt="Future of Cloud Computing in 2026" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Cloud Technology</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">Future of Cloud Computing in 2026</h3>
+              <p class="blog-post-desc">
+                Cloud architectures continue to rapidly evolve, delivering transformative breakthroughs in multi-cloud resilience, serverless scalability, and AI data pipelines.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Nov 15, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    5 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-article-card reveal delay-200" data-category="ai">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-ai-business.webp" alt="How AI Is Transforming Business Operations" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Artificial Intelligence</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">How AI Is Transforming Business Operations</h3>
+              <p class="blog-post-desc">
+                From automated analytics to adaptive decision engines, AI is strengthening operational agility, reducing cost overhead, and creating competitive market moats.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Nov 12, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    6 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-article-card reveal delay-300" data-category="security">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-cyber-threats.webp" alt="Top Cybersecurity Threats and How to Prevent Them" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Cybersecurity</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">Top Cybersecurity Threats and How to Prevent Them</h3>
+              <p class="blog-post-desc">
+                Cyber threats have become more sophisticated than ever. Explore modern zero-trust strategies to shield your company data from emerging attack vectors.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Nov 08, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    4 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-article-card reveal delay-100" data-category="digital">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-digital-transform.webp" alt="Digital Transformation: A Complete Guide" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Digital Transformation</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">Digital Transformation: A Complete Guide</h3>
+              <p class="blog-post-desc">
+                Everything enterprise leaders need to navigate cultural change, legacy migration, modern toolchains, and comprehensive tech stack modernization.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Nov 04, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    7 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="blog-article-card reveal delay-200" data-category="web">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-web-trends.webp" alt="10 Essential Web Development Trends for 2026" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Web Development</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">10 Essential Web Development Trends for 2026</h3>
+              <p class="blog-post-desc">
+                Explore the modern web frameworks, Jamstack architectures, performance optimizations, and progressive web apps reshaping modern digital experiences.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Oct 30, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    5 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="blog-article-card reveal delay-300" data-category="mobile">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-mobile-apps.webp" alt="Why Mobile Apps Are Critical for Business Growth" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Mobile Apps</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">Why Mobile Apps Are Critical for Business Growth</h3>
+              <p class="blog-post-desc">
+                Mobile platforms represent the primary touchpoint for modern consumers. Learn how native performance and cross-platform apps elevate customer retention.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Oct 25, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    6 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 7 -->
+          <article class="blog-article-card reveal delay-100" data-category="strategy">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-it-consulting.webp" alt="How IT Consulting Helps Businesses Grow" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">IT Consulting</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">How IT Consulting Helps Businesses Grow</h3>
+              <p class="blog-post-desc">
+                Discover why forward-thinking leadership teams partner with external tech consultants to streamline architectures and de-risk major technical bets.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Oct 20, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    4 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 8 -->
+          <article class="blog-article-card reveal delay-200" data-category="cloud">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-cloud-benefits.webp" alt="5 Benefits of Moving to the Cloud" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Cloud Computing</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">5 Benefits of Moving to the Cloud</h3>
+              <p class="blog-post-desc">
+                The transition from on-premise servers to cloud infrastructure yields dramatic gains in cost efficiency, uptime, disaster recovery, and scalable computation.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Oct 15, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    5 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 9 -->
+          <article class="blog-article-card reveal delay-300" data-category="strategy">
+            <div class="blog-thumb-wrap">
+              <img src="assets/images/blog-digital-strategy.webp" alt="Digital Strategy for Modern Businesses" width="400" height="220" loading="lazy">
+              <span class="blog-pill-badge">Business Strategy</span>
+            </div>
+            <div class="blog-card-body">
+              <h3 class="blog-post-title">Digital Strategy for Modern Businesses</h3>
+              <p class="blog-post-desc">
+                Crafting a digital roadmap that aligns technical execution directly with core revenue goals, market expansion, and long-term customer lifetime value.
+              </p>
+              <div class="blog-meta-footer">
+                <div class="blog-meta-left">
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Oct 10, 2026
+                  </span>
+                  <span class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    8 min read
+                  </span>
+                </div>
+                <a href="#consultation" data-open-modal="consultation" class="blog-read-btn">
+                  Read
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="blog-pagination reveal">
+          <button class="page-num active">1</button>
+          <a href="404.html" class="page-num">2</a>
+          <a href="404.html" class="page-num">3</a>
+          <a href="404.html" class="page-num" aria-label="Next Page">&rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALL TO ACTION BANNER (READY TO TRANSFORM YOUR BUSINESS?)
+         ========================================================================== -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-banner-box reveal">
+          <div class="cta-text-content">
+            <div class="section-badge on-dark">LET'S BUILD SOMETHING GREAT TOGETHER</div>
+            <h2 class="cta-title">Ready to Transform Your Business?</h2>
+            <p class="cta-desc">
+              Schedule a free 30-minute discovery call with our principal IT consultants to evaluate your technology roadmap and unlock real growth.
+            </p>
+            <div class="blog-cta-contact-info">
+              <a href="tel:+18005550199">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+1 (800) 555-0199</span>
+              </a>
+              <span>&bull;</span>
+              <a href="mailto:contact@stackly.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>contact@stackly.com</span>
+              </a>
+            </div>
+          </div>
+          <div class="cta-action-wrap">
+            <a href="#consultation" data-open-modal="consultation" class="btn btn-white">
+              Schedule a Consultation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="STACKLY Home">
+            <img src="assets/images/logo.webp" alt="STACKLY" class="site-logo-img">
+          </a>
+          <p class="footer-desc">
+            Empowering businesses through scalable IT solutions, cybersecurity audits, and strategic cloud consulting.
+          </p>
+          <div class="social-links">
+            <a href="404.html" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="X (formerly Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+              </svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="404.html" class="social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="casestudies.html">Case Studies</a></li>
+            <li><a href="blog.html">Blog &amp; Insights</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="footer-col-title">IT Services</h4>
+          <ul class="footer-nav-list">
+            <li><a href="services.html">IT Strategy &amp; Consulting</a></li>
+            <li><a href="services.html">Cloud Migration &amp; DevOps</a></li>
+            <li><a href="services.html">Custom Software Development</a></li>
+            <li><a href="services.html">Cyber Security &amp; Audits</a></li>
+            <li><a href="services.html">Digital Transformation</a></li>
+            <li><a href="services.html">Data Engineering &amp; Analytics</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div>
+          <h4 class="footer-col-title">Contact Us:</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:info@itconsult.com">info@itconsult.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Chennai, India</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Newsletter -->
+        <div>
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-newsletter-text">
+            Subscribe to our weekly briefing for the latest IT strategy and tech insights.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Stackly IT Consulting Corporate &amp; Business. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Security Statement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CONSULTATION MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Schedule Free Consultation</h3>
+        <p class="modal-subtitle">Meet 1-on-1 with an enterprise IT architect. Zero obligation.</p>
+      </div>
+      <form class="modal-form" id="consultationForm">
+        <div class="form-group">
+          <label for="consultName">Your Name</label>
+          <input type="text" id="consultName" class="form-control" placeholder="e.g. Michael Vance" required>
+        </div>
+        <div class="form-group">
+          <label for="consultEmail">Business Email</label>
+          <input type="email" id="consultEmail" class="form-control" placeholder="m.vance@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="consultService">Primary Area of Interest</label>
+          <select id="consultService" class="form-control">
+            <option value="cloud">Cloud Migration &amp; Multi-Cloud Architecture</option>
+            <option value="strategy">IT Strategy &amp; Enterprise Advisory</option>
+            <option value="software">Custom Software &amp; API Modernization</option>
+            <option value="security">Cybersecurity &amp; Compliance Audit</option>
+            <option value="transformation">Digital Transformation &amp; Automation</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Confirm Consultation Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/validation.js"></script>
+  <!-- GSAP & ScrollTrigger Animation Engine -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/consultation.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Interactive Category Filtering -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.blog-filter-btn');
+      const articleCards = document.querySelectorAll('.blog-article-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          articleCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+              setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(10px)';
+              setTimeout(() => { card.style.display = 'none'; }, 200);
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

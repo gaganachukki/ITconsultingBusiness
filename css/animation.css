@@ -1,0 +1,405 @@
+/* ==========================================================================
+   STACKLY IT CONSULTING - ADVANCED ANIMATIONS (animation.css)
+   GSAP Orchestration, 3D Perspectives, Apple MacBook Website Signatures
+   Bulletproof Visibility & High-Performance Hardware Acceleration
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CRITICAL VISIBILITY GUARANTEE (NEVER HIDE HERO OR CRITICAL CONTENT)
+   -------------------------------------------------------------------------- */
+.hero-section,
+.page-hero,
+.about-hero,
+.services-hero,
+.case-hero,
+.blog-hero,
+.contact-hero {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .container,
+.page-hero .container {
+  position: relative;
+  z-index: 5;
+}
+
+/* Hero section elements must ALWAYS be 100% visible immediately */
+.hero-section .reveal,
+.page-hero .reveal,
+.about-hero .reveal,
+.services-hero .reveal,
+.case-hero .reveal,
+.blog-hero .reveal,
+.contact-hero .reveal,
+.hero-content,
+.hero-visual,
+.hero-image-wrap {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. SCROLL REVEALS (.reveal) - SAFE PROGRESSIVE ENHANCEMENT
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active,
+.reveal.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+/* Stagger Delays for Scroll Reveals */
+.delay-100 { transition-delay: 60ms; }
+.delay-200 { transition-delay: 120ms; }
+.delay-300 { transition-delay: 180ms; }
+.delay-400 { transition-delay: 240ms; }
+.delay-500 { transition-delay: 300ms; }
+
+/* --------------------------------------------------------------------------
+   3. APPLE-STYLE SCROLL PROGRESS BAR
+   -------------------------------------------------------------------------- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1c7aec 0%, #38bdf8 50%, #818cf8 100%);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 99999;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+  transition: opacity 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   4. APPLE MACBOOK WEBSITE SIGNATURES
+   -------------------------------------------------------------------------- */
+
+/* Headline Text Shimmer for Dark Backgrounds (Hero Sections) */
+.hero-section .macbook-text-shimmer,
+.page-hero .macbook-text-shimmer,
+.macbook-text-shimmer-light,
+.section-title.on-dark .macbook-text-shimmer {
+  display: inline-block;
+  color: #38bdf8; /* Safe fallback */
+  background: linear-gradient(110deg, #38bdf8 0%, #ffffff 45%, #38bdf8 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 6s ease-in-out infinite;
+}
+
+/* Headline Text Shimmer for Light Backgrounds */
+.macbook-text-shimmer {
+  display: inline-block;
+  color: #1c7aec; /* Safe fallback */
+  background: linear-gradient(110deg, #011e48 0%, #1c7aec 45%, #011e48 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 6s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* Apple-style 3D Tilt Card Base */
+.tilt-card,
+.service-card,
+.why-card,
+.impact-card,
+.testimonial-card,
+.blog-card,
+.industry-card,
+.team-card,
+.study-card,
+.study-featured-card,
+.journey-card,
+.core-value-card,
+.contact-card,
+.step-card,
+.glass-card,
+.dash-card,
+.kpi-card,
+.admin-kpi-card,
+.admin-card,
+.consultant-card {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+/* Specular Glare / Sheen Layer (Follows cursor in 3D) */
+.tilt-card::after,
+.service-card::after,
+.why-card::after,
+.impact-card::after,
+.testimonial-card::after,
+.blog-card::after,
+.industry-card::after,
+.team-card::after,
+.study-card::after,
+.study-featured-card::after,
+.journey-card::after,
+.core-value-card::after,
+.contact-card::after,
+.step-card::after,
+.glass-card::after,
+.dash-card::after,
+.kpi-card::after,
+.admin-kpi-card::after,
+.admin-card::after,
+.consultant-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle 260px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.22), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.tilt-card:hover::after,
+.service-card:hover::after,
+.why-card:hover::after,
+.impact-card:hover::after,
+.testimonial-card:hover::after,
+.blog-card:hover::after,
+.industry-card:hover::after,
+.team-card:hover::after,
+.study-card:hover::after,
+.study-featured-card:hover::after,
+.journey-card:hover::after,
+.core-value-card:hover::after,
+.contact-card:hover::after,
+.step-card:hover::after,
+.glass-card:hover::after,
+.dash-card:hover::after,
+.kpi-card:hover::after,
+.admin-kpi-card:hover::after,
+.admin-card:hover::after,
+.consultant-card:hover::after {
+  opacity: 1;
+}
+
+/* Dark Section Cards Sheen */
+.why-partner .why-card::after,
+.industries .industry-card::after,
+.cta-banner::after {
+  background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.18), transparent 70%);
+}
+
+/* Apple-style Bento Grid Spotlight Border Glow */
+.spotlight-card::before,
+.service-card::before,
+.study-card::before,
+.why-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(350px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(28, 122, 236, 0.45), transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before,
+.service-card:hover::before,
+.study-card:hover::before,
+.why-card:hover::before {
+  opacity: 1;
+}
+
+/* Apple-style Magnetic Buttons */
+.magnetic-btn,
+.btn-primary,
+.nav-btn,
+.hero-cta-btn,
+.cta-banner .btn {
+  position: relative;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+  will-change: transform;
+}
+
+/* Apple-style Ambient 3D Mesh Blobs */
+.mesh-gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+  animation: meshFloat 14s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.mesh-orb-1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #38bdf8 0%, rgba(28, 122, 236, 0.35) 60%, transparent 100%);
+  top: -60px;
+  right: -40px;
+  animation-duration: 16s;
+}
+
+.mesh-orb-2 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #818cf8 0%, rgba(13, 89, 184, 0.3) 60%, transparent 100%);
+  bottom: -60px;
+  left: -40px;
+  animation-duration: 18s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes meshFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(30px, -20px, 0) scale(1.08) rotate(15deg);
+  }
+  100% {
+    transform: translate3d(-20px, 15px, 0) scale(0.95) rotate(-10deg);
+  }
+}
+
+/* Apple-style Dynamic Island Scrolled Header */
+.site-header {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header.island-scrolled {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 10px 30px rgba(1, 30, 72, 0.08), 0 1px 2px rgba(1, 30, 72, 0.04);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 10px 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. 3D FLOATING & KEYFRAMES
+   -------------------------------------------------------------------------- */
+@keyframes float3DSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate3d(1, 1, 0, 0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate3d(1, 1, 0, 2deg);
+  }
+}
+
+@keyframes float3DFast {
+  0%, 100% {
+    transform: translateY(0px) rotate3d(0, 1, 1, 0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate3d(0, 1, 1, -2deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes ripplePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(28, 122, 236, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(28, 122, 236, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(28, 122, 236, 0);
+  }
+}
+
+.animate-float {
+  animation: float3DSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float3DFast 5.5s ease-in-out infinite;
+}
+
+.video-play-pulse {
+  animation: ripplePulse 2.4s infinite;
+}
+
+.hero-glow-blob {
+  animation: pulseGlow 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Interactive Click Ripple */
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(28, 122, 236, 0.28);
+  transform: scale(0);
+  animation: rippleExpand 0.6s linear;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes rippleExpand {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. REDUCED MOTION PREFERENCE
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

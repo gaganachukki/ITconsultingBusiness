@@ -1,0 +1,355 @@
+/* ==========================================================================
+   STACKIN / STACKLY IT CONSULTING - BLOG PAGE STYLESHEET (blog.css)
+   Exact Figma Design Implementation
+   ========================================================================== */
+
+/* ==========================================================================
+   1. BLOG HERO SECTION
+   ========================================================================== */
+.blog-hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #011e48 0%, #032b69 50%, #0a3d8f 100%);
+  color: var(--text-white);
+  padding: 60px 0 100px;
+  overflow: hidden;
+}
+
+.blog-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.blog-hero-content {
+  z-index: 2;
+}
+
+.blog-hero-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.blog-hero-desc {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+.blog-hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+.blog-hero-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.blog-hero-frame img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-hero-frame:hover img {
+  transform: scale(1.03);
+}
+
+.blog-hero-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(1, 30, 72, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.blog-hero-badge strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   2. MAIN BLOG GRID SECTION
+   ========================================================================== */
+.blog-feed-section {
+  padding: 90px 0;
+  background-color: var(--bg-page);
+}
+
+/* Category Filters */
+.blog-category-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.blog-filter-btn {
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  background-color: var(--bg-light-blue);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.blog-filter-btn:hover,
+.blog-filter-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(28, 122, 236, 0.3);
+}
+
+.blog-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.blog-article-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.blog-article-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(28, 122, 236, 0.4);
+}
+
+.blog-thumb-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.blog-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-article-card:hover .blog-thumb-wrap img {
+  transform: scale(1.06);
+}
+
+.blog-pill-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.02em;
+}
+
+.blog-card-body {
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-post-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.blog-post-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.blog-meta-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.blog-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-item svg {
+  width: 14px;
+  height: 14px;
+  color: var(--primary);
+}
+
+.blog-read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: var(--transition-fast);
+}
+
+.blog-read-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.blog-article-card:hover .blog-read-btn svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   3. PAGINATION
+   ========================================================================== */
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.page-num {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  color: var(--navy-900);
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.page-num:hover,
+.page-num.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(28, 122, 236, 0.3);
+}
+
+/* ==========================================================================
+   4. BLOG CTA WITH CONTACT INFO
+   ========================================================================== */
+.blog-cta-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+.blog-cta-contact-info a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.blog-cta-contact-info a:hover {
+  color: #ffffff;
+}
+
+.blog-cta-contact-info svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES FOR BLOG PAGE
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .blog-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .blog-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .blog-hero-title {
+    font-size: 2.75rem;
+  }
+
+  .blog-hero-desc {
+    margin: 0 auto;
+  }
+
+  .blog-cta-contact-info {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-hero-title {
+    font-size: 2.25rem;
+  }
+}
