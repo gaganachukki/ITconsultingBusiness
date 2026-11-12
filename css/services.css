@@ -459,21 +459,27 @@
 
 .clients-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .client-logo-card {
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: 26px 20px;
+  padding: 24px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-subtle);
   transition: var(--transition-smooth);
   cursor: pointer;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .client-logo-card:hover {
@@ -483,9 +489,10 @@
 }
 
 .client-brand-svg {
-  height: 38px;
-  width: auto;
-  max-width: 160px;
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  max-height: 38px;
   display: block;
   transition: transform var(--transition-fast);
 }
@@ -543,11 +550,16 @@
   }
 
   .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
   }
 }
 
 @media (max-width: 768px) {
+  .clients-section {
+    padding: 50px 0;
+  }
+
   .services-hero-title {
     font-size: 2.25rem;
   }
@@ -565,8 +577,36 @@
   }
 
   .clients-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 480px;
     margin: 0 auto;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .client-logo-card {
+    padding: 18px 12px;
+  }
+
+  .client-brand-svg {
+    max-width: 120px;
+    max-height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .client-logo-card {
+    padding: 14px 8px;
+  }
+
+  .client-brand-svg {
+    max-width: 105px;
+    max-height: 28px;
   }
 }

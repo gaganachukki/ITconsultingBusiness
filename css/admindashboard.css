@@ -181,16 +181,17 @@ body.admin-dashboard-body {
 .admin-practice-meta {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  min-width: 0;
+  overflow: visible;
 }
 
 .practice-title {
   font-size: 0.875rem;
   font-weight: 700;
   color: var(--white);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.3;
 }
 
 .practice-subtitle {
@@ -325,7 +326,7 @@ body.admin-dashboard-body {
   height: var(--admin-header-height);
   background: var(--white);
   border-bottom: 1px solid var(--border-light);
-  padding: 0 32px;
+  padding: 0 24px;
   position: sticky;
   top: 0;
   z-index: 900;
@@ -333,12 +334,18 @@ body.admin-dashboard-body {
   align-items: center;
   justify-content: space-between;
   box-shadow: var(--shadow-sm);
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .admin-topbar-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 320px;
 }
 
 .admin-mobile-toggle {
@@ -349,6 +356,23 @@ body.admin-dashboard-body {
   padding: 6px;
   cursor: pointer;
   border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Mobile Brand Logo in Topbar (hidden by default on desktop) */
+.admin-mobile-logo {
+  display: none;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.admin-mobile-logo-img {
+  height: 26px;
+  width: auto;
+  max-width: 105px;
+  object-fit: contain;
+  display: block;
 }
 
 .admin-search-box {
@@ -358,8 +382,10 @@ body.admin-dashboard-body {
   background: var(--admin-bg);
   border: 1px solid var(--border-light);
   border-radius: 100px;
-  padding: 8px 18px;
-  width: 360px;
+  padding: 8px 16px;
+  width: 100%;
+  max-width: 280px;
+  min-width: 120px;
   transition: var(--transition);
 }
 
@@ -381,15 +407,19 @@ body.admin-dashboard-body {
   outline: none;
   background: transparent;
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-main);
   width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
 
 .admin-topbar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 /* Practice Telemetry Live Pill */
@@ -397,13 +427,15 @@ body.admin-dashboard-body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 100px;
   background: #f0fdf4;
   color: #166534;
   border: 1px solid #bbf7d0;
   font-size: 0.775rem;
   font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .telemetry-dot {
@@ -462,7 +494,8 @@ body.admin-dashboard-body {
   position: absolute;
   top: calc(100% + 12px);
   right: 0;
-  width: 320px;
+  width: min(320px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
   background: var(--white);
   border: 1px solid var(--border-light);
   border-radius: 14px;
@@ -529,9 +562,15 @@ body.admin-dashboard-body {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 4px 8px 4px 4px;
   border-radius: 100px;
   transition: var(--transition);
+  flex-shrink: 0;
+  max-width: 220px;
+}
+
+.admin-profile-btn:hover {
+  background: rgba(1, 30, 72, 0.04);
 }
 
 .admin-avatar {
@@ -546,24 +585,39 @@ body.admin-dashboard-body {
   align-items: center;
   justify-content: center;
   border: 2px solid #b9d7fc;
+  flex-shrink: 0;
 }
 
 .admin-profile-meta {
   display: flex;
   flex-direction: column;
   text-align: left;
+  min-width: 0;
+  overflow: visible;
 }
 
 .admin-profile-name {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  line-height: 1.25;
+  display: block;
 }
 
 .admin-profile-role {
   font-size: 0.725rem;
   color: var(--admin-accent);
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  line-height: 1.2;
+  display: block;
 }
 
 .btn-admin-primary {
@@ -608,31 +662,47 @@ body.admin-dashboard-body {
 
 /* Page Header */
 .admin-page-header {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
+  min-width: 0;
+  width: 100%;
+}
+
+.admin-page-header > div:first-child {
+  flex: 1 1 280px;
+  min-width: 0;
 }
 
 .admin-page-title {
-  font-size: 1.75rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
   font-weight: 800;
   color: var(--text-heading);
   letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .admin-page-subtitle {
-  font-size: 0.925rem;
+  font-size: clamp(0.825rem, 1.8vw, 0.925rem);
   color: var(--text-muted);
+  line-height: 1.5;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 760px;
 }
 
 .admin-header-actions {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 /* Executive KPI Grid */
@@ -717,15 +787,19 @@ body.admin-dashboard-body {
   border-bottom: 1px solid var(--border-subtle);
   flex-wrap: wrap;
   gap: 12px;
+  min-width: 0;
 }
 
 .admin-card-title {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
   font-weight: 700;
   color: var(--text-heading);
   display: flex;
   align-items: center;
   gap: 8px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.3;
 }
 
 /* 2-Column Grid */
@@ -937,19 +1011,20 @@ body.admin-dashboard-body {
     display: block;
   }
   .admin-search-box {
-    width: 220px;
+    max-width: 180px;
   }
-  .practice-telemetry-pill span {
-    display: none;
+  .practice-telemetry-pill {
+    padding: 5px 10px;
+    font-size: 0.72rem;
   }
 }
 
 @media (max-width: 640px) {
   .admin-topbar {
-    padding: 0 16px;
+    padding: 0 12px;
   }
   .admin-content {
-    padding: 20px 16px;
+    padding: 20px 14px;
   }
   .admin-kpi-grid {
     grid-template-columns: 1fr;
@@ -961,6 +1036,18 @@ body.admin-dashboard-body {
     display: none;
   }
   .admin-profile-meta {
+    display: flex;
+    flex-direction: column;
+  }
+  .admin-profile-name {
+    display: block;
+    font-size: 0.78rem;
+    max-width: 85px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .admin-profile-role {
     display: none;
   }
 }

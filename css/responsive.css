@@ -75,7 +75,10 @@ img, svg, video, canvas, audio, iframe, embed, object {
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
     width: min(320px, 86vw);
     height: 100vh;
     height: 100dvh;
@@ -84,7 +87,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
     align-items: flex-start;
     padding: 88px 24px 36px;
     box-shadow: -10px 0 35px rgba(1, 30, 72, 0.2);
-    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
     z-index: 1000;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -92,7 +95,9 @@ img, svg, video, canvas, audio, iframe, embed, object {
   }
 
   .nav-menu.open {
-    right: 0 !important;
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   .nav-item {
@@ -570,14 +575,54 @@ img, svg, video, canvas, audio, iframe, embed, object {
     max-width: 100vw !important;
   }
 
+  .topbar-left,
+  .admin-topbar-left {
+    flex: 0 0 auto !important;
+    min-width: 44px !important;
+    max-width: none !important;
+  }
+
   .dash-mobile-hamburger,
   .admin-mobile-toggle {
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    cursor: pointer;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    background: #f1f5f9 !important;
+    border: 1px solid var(--border-light, #e2e8f0) !important;
+    border-radius: 8px !important;
+    color: var(--dash-primary, #011e48) !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+
+  .dash-mobile-logo,
+  .admin-mobile-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .dash-mobile-logo-img,
+  .admin-mobile-logo-img {
+    height: 26px !important;
+    width: auto !important;
+    max-width: 105px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .topbar-right,
+  .admin-topbar-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
   }
 
   .sidebar-close-btn,
@@ -587,12 +632,15 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
   .dash-search-box,
   .admin-search-box {
-    width: 200px;
+    max-width: 200px;
+    min-width: 110px;
+    width: 100%;
   }
 
-  .system-health-pill span,
-  .practice-telemetry-pill span {
-    display: none;
+  .system-health-pill,
+  .practice-telemetry-pill {
+    padding: 5px 10px;
+    font-size: 0.725rem;
   }
 
   .kpi-grid,
@@ -671,15 +719,62 @@ img, svg, video, canvas, audio, iframe, embed, object {
   }
 
   .team-grid {
-    grid-template-columns: 1fr;
-    max-width: 380px;
-    margin: 0 auto;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* --- About Page at 768px --- */
+  .who-we-are-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .who-stats-col {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .who-stat-card {
+    padding: 16px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .who-image-frame img,
+  .about-hero-frame img {
+    height: 260px !important;
+  }
+
+  .about-hero-badge {
+    position: static !important;
+    margin: 16px auto 0 !important;
+    width: fit-content !important;
+    max-width: 100% !important;
   }
 
   .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 480px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .client-logo-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 18px 12px !important;
+    overflow: hidden !important;
+  }
+
+  .client-brand-svg {
+    width: 100% !important;
+    max-width: 125px !important;
+    height: auto !important;
+    max-height: 32px !important;
   }
 
   .featured-case-box {
@@ -705,6 +800,11 @@ img, svg, video, canvas, audio, iframe, embed, object {
     align-items: flex-start;
   }
 
+  .map-container-card {
+    height: 280px;
+    width: 100%;
+  }
+
   .office-thumb-frame {
     width: 100%;
     height: 180px;
@@ -724,6 +824,30 @@ img, svg, video, canvas, audio, iframe, embed, object {
   .dash-table,
   .admin-table {
     min-width: 580px;
+  }
+
+  /* Responsive Dashboard Headers */
+  .dash-page-header,
+  .admin-page-header {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 20px;
+  }
+
+  .dash-page-title,
+  .admin-page-title {
+    font-size: clamp(1.25rem, 4vw, 1.55rem) !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .dash-page-subtitle,
+  .admin-page-subtitle {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem) !important;
+    line-height: 1.5 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 }
 
@@ -760,8 +884,34 @@ img, svg, video, canvas, audio, iframe, embed, object {
   /* Dashboard Topbar Compact Mode */
   .dash-topbar,
   .admin-topbar {
-    padding: 0 12px;
-    height: 60px;
+    padding: 0 12px !important;
+    height: 60px !important;
+    gap: 8px !important;
+  }
+
+  .topbar-left,
+  .admin-topbar-left {
+    flex: 0 0 auto !important;
+    min-width: 40px !important;
+  }
+
+  .dash-mobile-hamburger,
+  .admin-mobile-toggle {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+
+  .topbar-right,
+  .admin-topbar-right {
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+
+  .system-health-pill,
+  .practice-telemetry-pill {
+    display: none !important;
   }
 
   .dash-content,
@@ -781,6 +931,23 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
   .user-profile-meta,
   .admin-profile-meta {
+    display: flex !important;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .user-profile-name,
+  .admin-profile-name {
+    display: block !important;
+    font-size: 0.78rem !important;
+    max-width: 85px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .user-profile-role,
+  .admin-profile-role {
     display: none !important;
   }
 
@@ -905,11 +1072,65 @@ img, svg, video, canvas, audio, iframe, embed, object {
   }
 
   .hero-float-badge,
-  .partner-float-badge {
-    position: static;
-    margin: 16px auto 0;
-    width: fit-content;
-    max-width: 100%;
+  .partner-float-badge,
+  .about-hero-badge {
+    position: static !important;
+    margin: 16px auto 0 !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+  }
+
+  /* --- About Page at 480px --- */
+  .who-we-are-grid {
+    gap: 22px !important;
+  }
+
+  .who-text-col .section-title {
+    font-size: clamp(1.45rem, 6vw, 1.85rem) !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .who-stats-col {
+    gap: 12px !important;
+  }
+
+  .who-stat-card {
+    padding: 15px 14px !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .who-stat-icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .who-stat-info .stat-num {
+    font-size: 1.4rem !important;
+  }
+
+  .who-image-frame img,
+  .about-hero-frame img {
+    height: 220px !important;
+  }
+
+  .values-grid .value-card {
+    padding: 24px 18px !important;
+  }
+
+  .commit-grid .commit-card {
+    padding: 22px 18px !important;
+  }
+
+  .mv-card {
+    padding: 30px 20px !important;
+  }
+
+  .map-container-card {
+    height: 240px !important;
   }
 
   .stats-card-wrapper {
@@ -1019,6 +1240,30 @@ img, svg, video, canvas, audio, iframe, embed, object {
     width: 46px;
     height: 46px;
   }
+
+  /* Valued Clients Grid (Mobile 480px) */
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .client-logo-card {
+    padding: 14px 8px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .client-brand-svg {
+    width: 100% !important;
+    max-width: 105px !important;
+    height: auto !important;
+    max-height: 28px !important;
+  }
 }
 
 /* ==========================================================================
@@ -1124,24 +1369,69 @@ img, svg, video, canvas, audio, iframe, embed, object {
   /* Dashboard Topbar items on 320px */
   .dash-topbar,
   .admin-topbar {
-    padding: 0 8px;
-    gap: 6px;
+    padding: 0 8px !important;
+    gap: 6px !important;
   }
 
-  .dash-topbar-right,
+  .topbar-left,
+  .admin-topbar-left {
+    flex: 0 0 auto !important;
+    min-width: 38px !important;
+  }
+
+  .dash-mobile-hamburger,
+  .admin-mobile-toggle {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    padding: 6px !important;
+    border-radius: 6px !important;
+  }
+
+  .dash-mobile-hamburger svg,
+  .admin-mobile-toggle svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .topbar-right,
   .admin-topbar-right {
-    gap: 6px;
+    gap: 6px !important;
+    margin-left: auto !important;
   }
 
-  .user-avatar-btn,
+  .user-profile-meta,
+  .admin-profile-meta {
+    display: none !important;
+  }
+
+  .user-profile-btn,
+  .admin-profile-btn {
+    padding: 2px !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .user-profile-avatar,
+  .admin-avatar,
   .admin-avatar-btn {
-    width: 32px;
-    height: 32px;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.8rem !important;
   }
 
   .btn-top-action,
   .btn-admin-primary {
-    padding: 8px 10px;
+    padding: 6px 10px !important;
+    min-width: 34px !important;
+    height: 34px !important;
+  }
+
+  .header-icon-btn,
+  .admin-icon-btn {
+    width: 34px !important;
+    height: 34px !important;
   }
 
   /* Overview Charts Ultra-Mobile Optimization (320px - 360px) */
@@ -1178,5 +1468,99 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
   .donut-center-number {
     font-size: 1.4rem;
+  }
+
+  /* Valued Clients Grid (Ultra Mobile 320px - 360px) */
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .client-logo-card {
+    padding: 12px 6px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .client-brand-svg {
+    width: 100% !important;
+    max-width: 95px !important;
+    height: auto !important;
+    max-height: 24px !important;
+  }
+
+  /* About Page Ultra-Mobile (320px - 360px) */
+  .who-we-are-section {
+    padding: 45px 0 !important;
+  }
+
+  .who-text-col .section-title {
+    font-size: clamp(1.35rem, 6.5vw, 1.6rem) !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .who-stat-card {
+    padding: 14px 12px !important;
+    gap: 10px !important;
+  }
+
+  .who-stat-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .who-stat-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .who-stat-info .stat-num {
+    font-size: 1.3rem !important;
+  }
+
+  .who-stat-info .stat-lbl {
+    font-size: 0.8rem !important;
+  }
+
+  .who-image-frame img,
+  .about-hero-frame img {
+    height: 195px !important;
+  }
+
+  .values-grid .value-card {
+    padding: 20px 14px !important;
+  }
+
+  .commit-grid .commit-card {
+    padding: 18px 14px !important;
+  }
+
+  .mv-card {
+    padding: 24px 16px !important;
+  }
+
+  .about-hero-badge {
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .map-container-card {
+    height: 220px !important;
+  }
+
+  /* Mobile Dashboard Topbar Logo (320px - 360px) */
+  .dash-mobile-logo-img,
+  .admin-mobile-logo-img {
+    height: 22px !important;
+    max-width: 85px !important;
   }
 }

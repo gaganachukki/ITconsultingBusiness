@@ -156,7 +156,7 @@
             <h3 class="contact-card-title">Our Office</h3>
             <p class="contact-card-desc">Visit our office for a face-to-face discussion.</p>
             <div class="contact-card-meta">
-              <p>No. 12, Green Park Street, Coimbatore - 641001, Tamil Nadu, India</p>
+              <p>No. 12, Green Park Street, Salem - 636004, Tamil Nadu, India</p>
             </div>
           </div>
 
@@ -239,13 +239,17 @@
           <div class="contact-side-col reveal delay-200">
             <!-- Map Container -->
             <div class="map-container-card">
-              <img src="assets/images/contact-map.webp" alt="Office Location Map Coimbatore" width="500" height="280" loading="lazy">
-              <div class="map-pin-pulse">
-                <svg class="pin-marker-svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                <div class="pin-pulse-wave"></div>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125026.17387498453!2d78.07722744770335!3d11.653835694212716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                class="google-map-iframe" 
+                title="Stackly IT Consulting Salem Location"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
 
             <!-- Office Info Card -->
@@ -256,14 +260,14 @@
                   <span>Find Us Here</span>
                 </div>
                 <p class="office-address-p">
-                  No. 12, Green Park Street, Coimbatore - 641001, Tamil Nadu, India
+                  No. 12, Green Park Street, Salem - 636004, Tamil Nadu, India
                 </p>
-                <a href="404.html" class="directions-link">
+                <a href="https://maps.google.com/?q=Salem,+Tamil+Nadu" target="_blank" rel="noopener noreferrer" class="directions-link">
                   Get Directions &rarr;
                 </a>
               </div>
               <div class="office-thumb-frame">
-                <img src="assets/images/contact-office.webp" alt="Stackly Corporate Building Coimbatore" width="110" height="110" loading="lazy">
+                <img src="assets/images/contact-office.webp" alt="Stackly Corporate Building Salem" width="110" height="110" loading="lazy">
               </div>
             </div>
           </div>
@@ -355,8 +359,12 @@
             </p>
           </div>
           <div class="cta-action-wrap">
-            <a href="#consultation" data-open-modal="consultation" class="btn btn-white">
-              Get a Free Consultation &rarr;
+            <a href="404.html" class="btn btn-white">
+              Schedule a Free Consultation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </a>
           </div>
         </div>
@@ -463,9 +471,9 @@
           <p class="footer-newsletter-text">
             Subscribe to our weekly briefing for the latest IT strategy and tech insights.
           </p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
-            <button type="submit">Subscribe</button>
+          <form class="newsletter-form" action="404.html" method="get">
+            <input type="email" placeholder="Enter your email" aria-label="Email for newsletter">
+            <button type="button" onclick="window.location.href='404.html'" data-action="404">Subscribe</button>
           </form>
         </div>
       </div>

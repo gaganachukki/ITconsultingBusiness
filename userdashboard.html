@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="css/animation.css">
   <link rel="stylesheet" href="css/userdashboard.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
 </head>
 <body class="user-dashboard-body">
 
@@ -155,23 +161,22 @@
           </svg>
         </button>
 
+        <!-- Mobile Brand Logo -->
+        <a href="index.html" class="dash-mobile-logo" aria-label="STACKLY Home">
+          <img src="assets/images/logo.webp" alt="STACKLY" class="dash-mobile-logo-img">
+        </a>
+
         <!-- Search Bar -->
         <div class="dash-search-box">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" class="dash-search-input" placeholder="Search clusters, sprints, tickets..." aria-label="Search dashboard">
+          <input type="text" class="dash-search-input" placeholder="Search clusters, sprints..." aria-label="Search dashboard">
         </div>
       </div>
 
       <div class="topbar-right">
-        <!-- Live System SLA Health -->
-        <div class="system-health-pill">
-          <span class="health-pulse-dot"></span>
-          <span>SLA 99.99% Operational</span>
-        </div>
-
         <!-- Notification Bell Dropdown -->
         <div class="header-action-container">
           <button type="button" class="header-icon-btn" id="notifBellBtn" aria-label="Notifications">
@@ -225,12 +230,12 @@
           <button type="button" class="user-profile-btn" id="userProfileBtn">
             <div class="user-profile-avatar" id="userProfileAvatar">AH</div>
             <div class="user-profile-meta">
-              <span class="user-profile-name" id="userProfileName">Alexander Hayes</span>
+              <span class="user-profile-name" id="userProfileName" title="Alexander Hayes">Alexander Hayes</span>
               <span class="user-profile-role">VP of Technology</span>
             </div>
           </button>
 
-          <div class="dropdown-panel" id="profileDropdown" style="width: 240px;">
+          <div class="dropdown-panel" id="profileDropdown">
             <div class="dropdown-header">
               <div>
                 <p style="font-size:0.875rem; font-weight:700; color:#011e48;" id="dropdownUserName">Alexander Hayes</p>
@@ -1233,6 +1238,12 @@
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Force top scroll on initial load/reload
+      window.scrollTo(0, 0);
+      window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+      });
+
       // 0. Synchronize Profile Info from Login Session
       function syncUserProfile() {
         if (window.StacklyAuth) {
@@ -1249,7 +1260,10 @@
             const ddEmail = document.getElementById('dropdownUserEmail');
 
             if (avatar && initials) avatar.textContent = initials;
-            if (nameEl && name) nameEl.textContent = name;
+            if (nameEl && name) {
+              nameEl.textContent = name;
+              nameEl.setAttribute('title', name);
+            }
             if (ddName && name) ddName.textContent = name;
             if (ddEmail && email) ddEmail.textContent = email;
           }

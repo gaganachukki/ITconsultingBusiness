@@ -112,7 +112,10 @@ window.StacklyAuth = {
     const dropdownUserEmail = document.getElementById('dropdownUserEmail') || document.querySelector('#profileDropdown .dropdown-header p:last-child');
 
     if (userAvatar && user.initials) userAvatar.textContent = user.initials;
-    if (userName && user.name) userName.textContent = user.name;
+    if (userName && user.name) {
+      userName.textContent = user.name;
+      userName.setAttribute('title', user.name);
+    }
     if (dropdownUserName && user.name) dropdownUserName.textContent = user.name;
     if (dropdownUserEmail && user.email) dropdownUserEmail.textContent = user.email;
 
@@ -123,7 +126,10 @@ window.StacklyAuth = {
     const adminDropdownUserEmail = document.getElementById('adminDropdownUserEmail') || document.querySelector('#adminProfileDropdown .admin-dropdown-header p:last-child');
 
     if (adminAvatar && user.initials) adminAvatar.textContent = user.initials;
-    if (adminName && user.name) adminName.textContent = user.name;
+    if (adminName && user.name) {
+      adminName.textContent = user.name;
+      adminName.setAttribute('title', user.name);
+    }
     if (adminDropdownUserName && user.name) adminDropdownUserName.textContent = user.name;
     if (adminDropdownUserEmail && user.email) adminDropdownUserEmail.textContent = user.email;
   }
@@ -244,25 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach(stat => counterObserver.observe(stat));
   }
 
-  // 5. Newsletter Submission Feedback
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+  // 5. Newsletter Submission -> Route to 404
+  const newsletterForms = document.querySelectorAll('.newsletter-form');
+  newsletterForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const input = newsletterForm.querySelector('input');
-      if (input && input.value.trim() !== '') {
-        const btn = newsletterForm.querySelector('button');
-        const originalText = btn.textContent;
-        btn.textContent = 'Subscribed!';
-        btn.style.backgroundColor = '#10b981';
-        input.value = '';
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.backgroundColor = '';
-        }, 3000);
-      }
+      window.location.href = '404.html';
     });
-  }
+  });
 
   // 6. Blog Carousel Dots Mock interaction
   const blogDots = document.querySelectorAll('.blog-carousel-dots .dot');

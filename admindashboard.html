@@ -15,6 +15,12 @@
   <link rel="stylesheet" href="css/animation.css">
   <link rel="stylesheet" href="css/admindashboard.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
 </head>
 <body class="admin-dashboard-body">
 
@@ -156,12 +162,17 @@
           </svg>
         </button>
 
+        <!-- Mobile Brand Logo -->
+        <a href="index.html" class="admin-mobile-logo" aria-label="STACKLY Home">
+          <img src="assets/images/logo.webp" alt="STACKLY" class="admin-mobile-logo-img">
+        </a>
+
         <div class="admin-search-box">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" class="admin-search-input" placeholder="Search enterprise clients, contracts, architects..." aria-label="Search admin portal">
+          <input type="text" class="admin-search-input" placeholder="Search clients, contracts..." aria-label="Search admin portal">
         </div>
       </div>
 
@@ -218,12 +229,12 @@
           <button type="button" class="admin-profile-btn" id="adminProfileBtn">
             <div class="admin-avatar" id="adminProfileAvatar">AK</div>
             <div class="admin-profile-meta">
-              <span class="admin-profile-name" id="adminProfileName">Arun Kumar</span>
+              <span class="admin-profile-name" id="adminProfileName" title="Arun Kumar">Arun Kumar</span>
               <span class="admin-profile-role">Managing Partner</span>
             </div>
           </button>
 
-          <div class="admin-dropdown-menu" id="adminProfileDropdown" style="width: 240px;">
+          <div class="admin-dropdown-menu" id="adminProfileDropdown">
             <div class="admin-dropdown-header">
               <div>
                 <p style="font-size:0.875rem; font-weight:700; color:#011e48;" id="adminDropdownUserName">Arun Kumar</p>
@@ -860,6 +871,12 @@
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Force top scroll on initial load/reload
+      window.scrollTo(0, 0);
+      window.addEventListener('beforeunload', () => {
+        window.scrollTo(0, 0);
+      });
+
       // 0. Synchronize Admin Profile Info from Login Session
       function syncAdminProfile() {
         if (window.StacklyAuth) {
@@ -876,7 +893,10 @@
             const ddEmail = document.getElementById('adminDropdownUserEmail');
 
             if (avatar && initials) avatar.textContent = initials;
-            if (nameEl && name) nameEl.textContent = name;
+            if (nameEl && name) {
+              nameEl.textContent = name;
+              nameEl.setAttribute('title', name);
+            }
             if (ddName && name) ddName.textContent = name;
             if (ddEmail && email) ddEmail.textContent = email;
           }

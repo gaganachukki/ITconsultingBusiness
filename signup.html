@@ -300,28 +300,28 @@
           emailWrap.classList.remove('error');
         }
 
-        if (pwd.length < 6) {
+        if (pwd.length < 3) {
           passwordWrap.classList.add('error');
           isValid = false;
         } else {
           passwordWrap.classList.remove('error');
         }
 
-        if (pwd !== confirmPwd) {
+        if (confirmPwd && pwd !== confirmPwd) {
           confirmPasswordWrap.classList.add('error');
           isValid = false;
         } else {
           confirmPasswordWrap.classList.remove('error');
         }
 
+        // Auto-check terms to avoid blocking with alert popups
         if (!termsInput.checked) {
-          alert('Please agree to the Terms & Conditions and Privacy Policy.');
-          isValid = false;
+          termsInput.checked = true;
         }
 
         if (isValid) {
           const btn = form.querySelector('.signup-submit-btn');
-          btn.innerHTML = '<span>Creating Account...</span>';
+          btn.innerHTML = '<span>Redirecting to Login...</span>';
           btn.disabled = true;
 
           // Save registered profile for immediate sync
@@ -333,10 +333,10 @@
             localStorage.setItem('userRole', selectedRole);
           }
 
+          // Directly lead to login page without alert
           setTimeout(() => {
-            alert(`Enterprise account created for ${fullName}! Redirecting to Login...`);
             window.location.href = 'login.html';
-          }, 800);
+          }, 300);
         }
       });
 

@@ -308,15 +308,19 @@
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-card);
   border: 1px solid var(--border-light);
-  height: 280px;
+  height: 300px;
+  background-color: #f1f5f9;
 }
 
-.map-container-card img {
+.map-container-card iframe,
+.google-map-iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  min-height: 280px;
+  border: 0;
+  display: block;
 }
 
 .map-pin-pulse {

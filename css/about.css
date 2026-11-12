@@ -133,7 +133,10 @@
 
 .who-text-col .section-title {
   margin-bottom: 20px;
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  line-height: 1.25;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .who-text-col p {
@@ -699,28 +702,58 @@
 
 @media (max-width: 768px) {
   .about-hero-title {
-    font-size: 2.25rem;
+    font-size: clamp(1.85rem, 5.5vw, 2.25rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .about-hero-badge {
+    position: static;
+    margin: 16px auto 0;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .about-hero-frame img,
+  .who-image-frame img {
+    height: 260px;
+  }
+
+  .who-we-are-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .who-stats-col {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .who-stat-card {
+    padding: 16px 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .team-grid {
     grid-template-columns: 1fr;
-    max-width: 380px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
   }
 
   .timeline-track {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .commit-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 }
