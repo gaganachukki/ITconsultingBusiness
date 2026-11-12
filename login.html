@@ -176,6 +176,27 @@
       const roleOptions = document.querySelectorAll('.role-option');
       let selectedRole = 'client';
 
+      // Restore saved email & role if present
+      const savedEmail = localStorage.getItem('userEmail');
+      const savedRole = localStorage.getItem('userRole');
+      const emailInput = document.getElementById('email');
+
+      if (savedEmail && emailInput) {
+        emailInput.value = savedEmail;
+      }
+      if (savedRole === 'admin') {
+        roleOptions.forEach(opt => {
+          if (opt.getAttribute('data-role') === 'admin') {
+            opt.classList.add('active');
+            opt.setAttribute('aria-checked', 'true');
+            selectedRole = 'admin';
+          } else {
+            opt.classList.remove('active');
+            opt.setAttribute('aria-checked', 'false');
+          }
+        });
+      }
+
       roleOptions.forEach(option => {
         option.addEventListener('click', () => {
           roleOptions.forEach(opt => {
@@ -215,7 +236,6 @@
 
       // 3. Form Submission & Validation
       const form = document.getElementById('loginForm');
-      const emailInput = document.getElementById('email');
       const emailWrap = document.getElementById('emailWrap');
       const passwordWrap = document.getElementById('passwordWrap');
 
@@ -247,6 +267,14 @@
           const btn = form.querySelector('.login-submit-btn');
           btn.innerHTML = '<span>Signing In...</span>';
           btn.disabled = true;
+
+          // Save user credentials and compute name/initials for dashboards
+          if (window.StacklyAuth) {
+            window.StacklyAuth.login(email, selectedRole);
+          } else {
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userRole', selectedRole);
+          }
 
           setTimeout(() => {
             if (selectedRole === 'admin') {

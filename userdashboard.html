@@ -223,9 +223,9 @@
         <!-- User Profile Dropdown -->
         <div class="header-action-container">
           <button type="button" class="user-profile-btn" id="userProfileBtn">
-            <div class="user-profile-avatar">AH</div>
+            <div class="user-profile-avatar" id="userProfileAvatar">AH</div>
             <div class="user-profile-meta">
-              <span class="user-profile-name">Alexander Hayes</span>
+              <span class="user-profile-name" id="userProfileName">Alexander Hayes</span>
               <span class="user-profile-role">VP of Technology</span>
             </div>
           </button>
@@ -233,8 +233,8 @@
           <div class="dropdown-panel" id="profileDropdown" style="width: 240px;">
             <div class="dropdown-header">
               <div>
-                <p style="font-size:0.875rem; font-weight:700; color:#011e48;">Alexander Hayes</p>
-                <p style="font-size:0.75rem; color:#64748b;">a.hayes@apexlogistics.com</p>
+                <p style="font-size:0.875rem; font-weight:700; color:#011e48;" id="dropdownUserName">Alexander Hayes</p>
+                <p style="font-size:0.75rem; color:#64748b;" id="dropdownUserEmail">a.hayes@apexlogistics.com</p>
               </div>
             </div>
             <div class="dropdown-list">
@@ -346,6 +346,277 @@
             <div class="kpi-value">142 / 160h</div>
             <div class="kpi-trend trend-up">
               <span>18 hours remaining in retainer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Visual Analytics Row: Sprint Velocity Bar Graph & Cloud Resource Donut Chart -->
+        <div class="dash-grid-2col" style="margin-bottom: 28px;">
+          <!-- 1. Bar Graph: Sprint Velocity & Workload Output -->
+          <div class="dash-card overview-chart-card">
+            <div class="dash-card-header">
+              <div>
+                <h2 class="dash-card-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                  <span>Sprint Velocity &amp; Workload Output</span>
+                </h2>
+                <p class="dash-card-subtitle">Story points completed &amp; compute throughput across recent agile sprints</p>
+              </div>
+              <div class="chart-header-badges">
+                <span class="status-pill success"><span class="live-pulse-dot"></span> Sprint 16 Active</span>
+              </div>
+            </div>
+
+            <div class="bar-chart-container">
+              <!-- Left Y-Axis Grid Labels -->
+              <div class="chart-y-axis">
+                <span>120 pts</span>
+                <span>90 pts</span>
+                <span>60 pts</span>
+                <span>30 pts</span>
+                <span>0</span>
+              </div>
+
+              <!-- Chart Plot Area -->
+              <div class="chart-plot-area">
+                <!-- Grid Lines -->
+                <div class="chart-grid-line" style="bottom: 100%;"></div>
+                <div class="chart-grid-line" style="bottom: 75%;"></div>
+                <div class="chart-grid-line" style="bottom: 50%;"></div>
+                <div class="chart-grid-line" style="bottom: 25%;"></div>
+                <div class="chart-grid-line" style="bottom: 0%;"></div>
+
+                <!-- Animated Bars Wrap -->
+                <div class="chart-bars-wrap">
+                  <!-- Sprint 11 -->
+                  <div class="chart-col" data-sprint="Sprint 11" data-val="54 pts" data-sub="May &bull; 12 Microservices">
+                    <div class="chart-bar-outer">
+                      <div class="chart-bar-tooltip">Sprint 11: 54 pts (May)</div>
+                      <span class="chart-bar-val">54</span>
+                      <div class="chart-bar-fill" data-height="45%">
+                        <div class="chart-bar-glow"></div>
+                      </div>
+                    </div>
+                    <span class="chart-col-label">Sprint 11</span>
+                  </div>
+
+                  <!-- Sprint 12 -->
+                  <div class="chart-col" data-sprint="Sprint 12" data-val="68 pts" data-sub="Jun &bull; 16 Microservices">
+                    <div class="chart-bar-outer">
+                      <div class="chart-bar-tooltip">Sprint 12: 68 pts (Jun)</div>
+                      <span class="chart-bar-val">68</span>
+                      <div class="chart-bar-fill" data-height="57%">
+                        <div class="chart-bar-glow"></div>
+                      </div>
+                    </div>
+                    <span class="chart-col-label">Sprint 12</span>
+                  </div>
+
+                  <!-- Sprint 13 -->
+                  <div class="chart-col" data-sprint="Sprint 13" data-val="76 pts" data-sub="Jul &bull; 18 Microservices">
+                    <div class="chart-bar-outer">
+                      <div class="chart-bar-tooltip">Sprint 13: 76 pts (Jul)</div>
+                      <span class="chart-bar-val">76</span>
+                      <div class="chart-bar-fill" data-height="63%">
+                        <div class="chart-bar-glow"></div>
+                      </div>
+                    </div>
+                    <span class="chart-col-label">Sprint 13</span>
+                  </div>
+
+                  <!-- Sprint 14 -->
+                  <div class="chart-col" data-sprint="Sprint 14" data-val="92 pts" data-sub="Aug &bull; 22 Microservices">
+                    <div class="chart-bar-outer">
+                      <div class="chart-bar-tooltip">Sprint 14: 92 pts (Aug)</div>
+                      <span class="chart-bar-val">92</span>
+                      <div class="chart-bar-fill" data-height="77%">
+                        <div class="chart-bar-glow"></div>
+                      </div>
+                    </div>
+                    <span class="chart-col-label">Sprint 14</span>
+                  </div>
+
+                  <!-- Sprint 15 -->
+                  <div class="chart-col" data-sprint="Sprint 15" data-val="104 pts" data-sub="Sep &bull; 25 Microservices">
+                    <div class="chart-bar-outer">
+                      <div class="chart-bar-tooltip">Sprint 15: 104 pts (Sep)</div>
+                      <span class="chart-bar-val">104</span>
+                      <div class="chart-bar-fill" data-height="87%">
+                        <div class="chart-bar-glow"></div>
+                      </div>
+                    </div>
+                    <span class="chart-col-label">Sprint 15</span>
+                  </div>
+
+                  <!-- Sprint 16 (Current Active) -->
+                  <div class="chart-col active-col" data-sprint="Sprint 16" data-val="118 pts" data-sub="Oct-Nov &bull; 28 Releases (Current)">
+                    <div class="chart-bar-outer">
+                      <div class="chart-bar-tooltip">Sprint 16: 118 pts (Current Peak)</div>
+                      <span class="chart-bar-val">118</span>
+                      <div class="chart-bar-fill" data-height="98%">
+                        <div class="chart-bar-glow"></div>
+                      </div>
+                    </div>
+                    <span class="chart-col-label">Sprint 16 <span class="tag-current">Active</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Micro Metrics Footer -->
+            <div class="chart-footer-metrics">
+              <div class="chart-metric-item">
+                <span class="metric-dot" style="background: #1c7aec;"></span>
+                <div>
+                  <div class="metric-label">Average Velocity</div>
+                  <div class="metric-val">85.3 <span class="metric-unit">pts</span></div>
+                </div>
+              </div>
+              <div class="chart-metric-item">
+                <span class="metric-dot" style="background: #10b981;"></span>
+                <div>
+                  <div class="metric-label">Release Cadence</div>
+                  <div class="metric-val">4.2 <span class="metric-unit">/ wk</span></div>
+                </div>
+              </div>
+              <div class="chart-metric-item">
+                <span class="metric-dot" style="background: #6366f1;"></span>
+                <div>
+                  <div class="metric-label">On-Time SLA</div>
+                  <div class="metric-val">96.8%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Pie / Donut Chart: Multi-Cloud Resource Allocation -->
+          <div class="dash-card overview-chart-card">
+            <div class="dash-card-header">
+              <div>
+                <h2 class="dash-card-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                    <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                  </svg>
+                  <span>Cloud Resource Allocation</span>
+                </h2>
+                <p class="dash-card-subtitle">Workload distribution across enterprise cloud clusters</p>
+              </div>
+              <span class="status-pill info">128 Pods</span>
+            </div>
+
+            <div class="donut-chart-container">
+              <!-- SVG Donut Chart -->
+              <div class="donut-svg-wrap">
+                <svg class="donut-svg" viewBox="0 0 220 220" aria-label="Cloud Resource Allocation Pie Chart">
+                  <defs>
+                    <linearGradient id="gradAws" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#38bdf8" />
+                      <stop offset="100%" stop-color="#1c7aec" />
+                    </linearGradient>
+                    <linearGradient id="gradAzure" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#818cf8" />
+                      <stop offset="100%" stop-color="#4f46e5" />
+                    </linearGradient>
+                    <linearGradient id="gradGcp" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#34d399" />
+                      <stop offset="100%" stop-color="#059669" />
+                    </linearGradient>
+                    <linearGradient id="gradEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fbbf24" />
+                      <stop offset="100%" stop-color="#d97706" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Base Track -->
+                  <circle class="donut-track" cx="110" cy="110" r="75" fill="none" stroke-width="20" />
+
+                  <!-- Segment Group -->
+                  <g class="donut-segments-group" transform="rotate(-90 110 110)">
+                    <!-- Segment 1: AWS EKS (42%) -->
+                    <circle class="donut-segment" id="donutSeg1" data-id="aws" cx="110" cy="110" r="75"
+                      fill="none" stroke="url(#gradAws)" stroke-width="20"
+                      stroke-dasharray="194.92 471.24" stroke-dashoffset="471.24" data-target-offset="0.00"
+                      data-pods="54 Pods" data-percent="42%" data-name="AWS EKS" />
+
+                    <!-- Segment 2: Azure Microservices (28%) -->
+                    <circle class="donut-segment" id="donutSeg2" data-id="azure" cx="110" cy="110" r="75"
+                      fill="none" stroke="url(#gradAzure)" stroke-width="20"
+                      stroke-dasharray="128.95 471.24" stroke-dashoffset="471.24" data-target-offset="-197.92"
+                      data-pods="36 Pods" data-percent="28%" data-name="Azure Services" />
+
+                    <!-- Segment 3: GCP Analytics (18%) -->
+                    <circle class="donut-segment" id="donutSeg3" data-id="gcp" cx="110" cy="110" r="75"
+                      fill="none" stroke="url(#gradGcp)" stroke-width="20"
+                      stroke-dasharray="81.82 471.24" stroke-dashoffset="471.24" data-target-offset="-329.87"
+                      data-pods="23 Pods" data-percent="18%" data-name="GCP Analytics" />
+
+                    <!-- Segment 4: Edge Zero-Trust (12%) -->
+                    <circle class="donut-segment" id="donutSeg4" data-id="edge" cx="110" cy="110" r="75"
+                      fill="none" stroke="url(#gradEdge)" stroke-width="20"
+                      stroke-dasharray="53.55 471.24" stroke-dashoffset="471.24" data-target-offset="-414.69"
+                      data-pods="15 Pods" data-percent="12%" data-name="Edge Security" />
+                  </g>
+                </svg>
+
+                <!-- Center Stat Badge -->
+                <div class="donut-center-info">
+                  <span class="donut-center-number" id="donutCenterVal">128</span>
+                  <span class="donut-center-label" id="donutCenterLabel">Total Pods</span>
+                  <span class="donut-center-sub" id="donutCenterSub">100% Multi-Cloud</span>
+                </div>
+              </div>
+
+              <!-- Interactive Legend -->
+              <div class="donut-legend-list">
+                <div class="donut-legend-item" data-id="aws">
+                  <div class="legend-info">
+                    <span class="legend-bullet" style="background: linear-gradient(135deg, #38bdf8, #1c7aec);"></span>
+                    <span class="legend-text">AWS EKS Clusters</span>
+                  </div>
+                  <div class="legend-values">
+                    <span class="legend-count">54 pods</span>
+                    <span class="legend-percent" style="color: #1c7aec;">42%</span>
+                  </div>
+                </div>
+
+                <div class="donut-legend-item" data-id="azure">
+                  <div class="legend-info">
+                    <span class="legend-bullet" style="background: linear-gradient(135deg, #818cf8, #4f46e5);"></span>
+                    <span class="legend-text">Azure Microservices</span>
+                  </div>
+                  <div class="legend-values">
+                    <span class="legend-count">36 pods</span>
+                    <span class="legend-percent" style="color: #6366f1;">28%</span>
+                  </div>
+                </div>
+
+                <div class="donut-legend-item" data-id="gcp">
+                  <div class="legend-info">
+                    <span class="legend-bullet" style="background: linear-gradient(135deg, #34d399, #059669);"></span>
+                    <span class="legend-text">GCP BigQuery Pods</span>
+                  </div>
+                  <div class="legend-values">
+                    <span class="legend-count">23 pods</span>
+                    <span class="legend-percent" style="color: #10b981;">18%</span>
+                  </div>
+                </div>
+
+                <div class="donut-legend-item" data-id="edge">
+                  <div class="legend-info">
+                    <span class="legend-bullet" style="background: linear-gradient(135deg, #fbbf24, #d97706);"></span>
+                    <span class="legend-text">Zero Trust Edge</span>
+                  </div>
+                  <div class="legend-values">
+                    <span class="legend-count">15 pods</span>
+                    <span class="legend-percent" style="color: #f59e0b;">12%</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -962,6 +1233,30 @@
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // 0. Synchronize Profile Info from Login Session
+      function syncUserProfile() {
+        if (window.StacklyAuth) {
+          window.StacklyAuth.syncDashboardUI();
+        } else {
+          const email = localStorage.getItem('userEmail');
+          const name = localStorage.getItem('userName');
+          const initials = localStorage.getItem('userInitials');
+
+          if (email) {
+            const avatar = document.getElementById('userProfileAvatar');
+            const nameEl = document.getElementById('userProfileName');
+            const ddName = document.getElementById('dropdownUserName');
+            const ddEmail = document.getElementById('dropdownUserEmail');
+
+            if (avatar && initials) avatar.textContent = initials;
+            if (nameEl && name) nameEl.textContent = name;
+            if (ddName && name) ddName.textContent = name;
+            if (ddEmail && email) ddEmail.textContent = email;
+          }
+        }
+      }
+      syncUserProfile();
+
       // 1. Tab Switching
       const sidebarItems = document.querySelectorAll('.sidebar-item[data-tab]');
       const tabPanels = document.querySelectorAll('.tab-panel');
@@ -984,6 +1279,10 @@
         });
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (tabId === 'tab-overview') {
+          animateOverviewCharts();
+        }
       }
 
       sidebarItems.forEach(item => {
@@ -1125,6 +1424,142 @@
           ticketForm.reset();
         });
       }
+
+      // 5. Interactive Overview Visualizations Controller (Bar Graph & Donut/Pie Chart)
+      function animateOverviewCharts() {
+        const barFills = document.querySelectorAll('.chart-bar-fill');
+        const barVals = document.querySelectorAll('.chart-bar-val');
+        const donutSegments = document.querySelectorAll('.donut-segment');
+        const donutCenterVal = document.getElementById('donutCenterVal');
+
+        // Reset elements for clean entrance animation
+        barFills.forEach(bar => {
+          bar.style.height = '0%';
+        });
+        barVals.forEach(val => {
+          val.classList.remove('visible');
+        });
+        donutSegments.forEach(seg => {
+          seg.style.strokeDashoffset = '471.24';
+        });
+
+        // Trigger staggered rising animation
+        setTimeout(() => {
+          // Animate Bar Graph: Rising bars with spring ease
+          barFills.forEach((bar, index) => {
+            const targetHeight = bar.getAttribute('data-height') || '50%';
+            setTimeout(() => {
+              bar.style.height = targetHeight;
+            }, index * 80);
+          });
+
+          // Animate value labels as bars reach full altitude
+          setTimeout(() => {
+            barVals.forEach((val, idx) => {
+              setTimeout(() => {
+                val.classList.add('visible');
+              }, idx * 80);
+            });
+          }, 320);
+
+          // Animate Donut / Pie Chart: Circular stroke drawing
+          donutSegments.forEach((seg, index) => {
+            const targetOffset = seg.getAttribute('data-target-offset') || '0';
+            setTimeout(() => {
+              seg.style.strokeDashoffset = targetOffset;
+            }, 80 + index * 60);
+          });
+
+          // Smooth Counter Animation for Center Stat (0 -> 128)
+          if (donutCenterVal) {
+            let start = 0;
+            const end = 128;
+            const duration = 1200;
+            const startTime = performance.now();
+
+            function countStep(now) {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeOut = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(easeOut * end);
+              donutCenterVal.textContent = current;
+              if (progress < 1) {
+                requestAnimationFrame(countStep);
+              } else {
+                donutCenterVal.textContent = end;
+              }
+            }
+            requestAnimationFrame(countStep);
+          }
+        }, 50);
+      }
+
+      // Initialize Donut Chart & Legend Synchronized Hover Interactivity
+      const donutSegments = document.querySelectorAll('.donut-segment');
+      const legendItems = document.querySelectorAll('.donut-legend-item');
+      const centerVal = document.getElementById('donutCenterVal');
+      const centerLabel = document.getElementById('donutCenterLabel');
+      const centerSub = document.getElementById('donutCenterSub');
+
+      function highlightSegment(id) {
+        donutSegments.forEach(seg => {
+          if (seg.getAttribute('data-id') === id) {
+            seg.style.strokeWidth = '25px';
+            seg.style.filter = 'drop-shadow(0 0 10px rgba(28, 122, 236, 0.5))';
+            seg.style.opacity = '1';
+            if (centerVal && centerLabel && centerSub) {
+              centerVal.textContent = seg.getAttribute('data-pods');
+              centerLabel.textContent = seg.getAttribute('data-name');
+              centerSub.textContent = seg.getAttribute('data-percent') + ' of Total';
+            }
+          } else {
+            seg.style.strokeWidth = '20px';
+            seg.style.filter = 'none';
+            seg.style.opacity = '0.35';
+          }
+        });
+
+        legendItems.forEach(item => {
+          if (item.getAttribute('data-id') === id) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+
+      function resetDonutHighlight() {
+        donutSegments.forEach(seg => {
+          seg.style.strokeWidth = '20px';
+          seg.style.filter = 'none';
+          seg.style.opacity = '1';
+        });
+
+        legendItems.forEach(item => {
+          item.classList.remove('active');
+        });
+
+        if (centerVal && centerLabel && centerSub) {
+          centerVal.textContent = '128';
+          centerLabel.textContent = 'Total Pods';
+          centerSub.textContent = '100% Multi-Cloud';
+        }
+      }
+
+      donutSegments.forEach(seg => {
+        const id = seg.getAttribute('data-id');
+        seg.addEventListener('mouseenter', () => highlightSegment(id));
+        seg.addEventListener('mouseleave', resetDonutHighlight);
+      });
+
+      legendItems.forEach(item => {
+        const id = item.getAttribute('data-id');
+        item.addEventListener('mouseenter', () => highlightSegment(id));
+        item.addEventListener('mouseleave', resetDonutHighlight);
+      });
+
+      // Run initial entrance animation on load
+      animateOverviewCharts();
     });
   </script>
   <!-- GSAP Animation Engine & Micro-Interactions -->

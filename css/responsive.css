@@ -847,6 +847,21 @@ img, svg, video, canvas, audio, iframe, embed, object {
   .notfound-logo .site-logo-img {
     height: 32px;
   }
+
+  /* Overview Charts Tablet Adjustments */
+  .overview-chart-card {
+    padding: 20px 16px;
+  }
+
+  .donut-chart-container {
+    flex-direction: column;
+    height: auto;
+    gap: 18px;
+  }
+
+  .donut-legend-list {
+    width: 100%;
+  }
 }
 
 /* ==========================================================================
@@ -1127,5 +1142,41 @@ img, svg, video, canvas, audio, iframe, embed, object {
   .btn-top-action,
   .btn-admin-primary {
     padding: 8px 10px;
+  }
+
+  /* Overview Charts Ultra-Mobile Optimization (320px - 360px) */
+  .bar-chart-container {
+    height: 185px;
+    gap: 6px;
+  }
+
+  .chart-y-axis {
+    display: none;
+  }
+
+  .chart-bars-wrap {
+    padding: 0 2px;
+    gap: 4px;
+  }
+
+  .chart-bar-outer {
+    max-width: 28px;
+  }
+
+  .chart-col-label {
+    font-size: 0.6rem;
+  }
+
+  .chart-bar-val {
+    font-size: 0.62rem;
+  }
+
+  .donut-svg-wrap {
+    width: 160px;
+    height: 160px;
+  }
+
+  .donut-center-number {
+    font-size: 1.4rem;
   }
 }

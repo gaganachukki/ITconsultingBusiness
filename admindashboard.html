@@ -216,9 +216,9 @@
         <!-- Executive Profile Menu -->
         <div class="admin-action-container">
           <button type="button" class="admin-profile-btn" id="adminProfileBtn">
-            <div class="admin-avatar">AK</div>
+            <div class="admin-avatar" id="adminProfileAvatar">AK</div>
             <div class="admin-profile-meta">
-              <span class="admin-profile-name">Arun Kumar</span>
+              <span class="admin-profile-name" id="adminProfileName">Arun Kumar</span>
               <span class="admin-profile-role">Managing Partner</span>
             </div>
           </button>
@@ -226,8 +226,8 @@
           <div class="admin-dropdown-menu" id="adminProfileDropdown" style="width: 240px;">
             <div class="admin-dropdown-header">
               <div>
-                <p style="font-size:0.875rem; font-weight:700; color:#011e48;">Arun Kumar</p>
-                <p style="font-size:0.75rem; color:#64748b;">arun.kumar@stackly.com</p>
+                <p style="font-size:0.875rem; font-weight:700; color:#011e48;" id="adminDropdownUserName">Arun Kumar</p>
+                <p style="font-size:0.75rem; color:#64748b;" id="adminDropdownUserEmail">arun.kumar@stackly.com</p>
               </div>
             </div>
             <a href="404.html" class="admin-dropdown-item">Executive Settings</a>
@@ -860,6 +860,30 @@
        ========================================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // 0. Synchronize Admin Profile Info from Login Session
+      function syncAdminProfile() {
+        if (window.StacklyAuth) {
+          window.StacklyAuth.syncDashboardUI();
+        } else {
+          const email = localStorage.getItem('userEmail');
+          const name = localStorage.getItem('userName');
+          const initials = localStorage.getItem('userInitials');
+
+          if (email) {
+            const avatar = document.getElementById('adminProfileAvatar');
+            const nameEl = document.getElementById('adminProfileName');
+            const ddName = document.getElementById('adminDropdownUserName');
+            const ddEmail = document.getElementById('adminDropdownUserEmail');
+
+            if (avatar && initials) avatar.textContent = initials;
+            if (nameEl && name) nameEl.textContent = name;
+            if (ddName && name) ddName.textContent = name;
+            if (ddEmail && email) ddEmail.textContent = email;
+          }
+        }
+      }
+      syncAdminProfile();
+
       // 1. Tab Navigation
       const navItems = document.querySelectorAll('.admin-nav-item[data-tab]');
       const tabPanels = document.querySelectorAll('.admin-tab-panel');

@@ -750,6 +750,460 @@ body.user-dashboard-body {
   margin-bottom: 28px;
 }
 
+/* ==========================================================================
+   Interactive Overview Visualizations: Sprint Velocity Bar Graph & Cloud Donut Chart
+   ========================================================================== */
+.overview-chart-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.overview-chart-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.dash-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.chart-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.live-pulse-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseDot 2s infinite;
+  margin-right: 4px;
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* --- BAR GRAPH STYLES --- */
+.bar-chart-container {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  height: 240px;
+  padding: 12px 0 0;
+  position: relative;
+}
+
+.chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-light);
+  padding-bottom: 28px;
+  min-width: 48px;
+  user-select: none;
+}
+
+.chart-plot-area {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-grid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-bottom: 1px dashed rgba(226, 232, 240, 0.9);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.chart-bars-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: calc(100% - 28px);
+  gap: 10px;
+  padding: 0 8px;
+}
+
+.chart-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
+}
+
+.chart-bar-outer {
+  position: relative;
+  width: 100%;
+  max-width: 44px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.chart-bar-fill {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, #1c7aec 0%, #011e48 100%);
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(1, 30, 72, 0.12);
+  transition: height 1s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, filter 0.22s ease;
+  transform-origin: bottom center;
+}
+
+.chart-bar-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px 8px 0 0;
+}
+
+.chart-bar-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.chart-col:hover .chart-bar-fill {
+  transform: translateY(-4px) scaleX(1.04);
+  box-shadow: 0 10px 22px rgba(28, 122, 236, 0.28);
+  filter: brightness(1.12);
+}
+
+/* Active Bar: Sprint 16 Highlight */
+.chart-col.active-col .chart-bar-fill {
+  background: linear-gradient(180deg, #10b981 0%, #011e48 100%);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.32);
+}
+
+.chart-col.active-col:hover .chart-bar-fill {
+  box-shadow: 0 12px 26px rgba(16, 185, 129, 0.45);
+}
+
+.chart-bar-val {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.chart-bar-val.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chart-col.active-col .chart-bar-val {
+  color: #10b981;
+}
+
+.chart-col-label {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 4px;
+  white-space: nowrap;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.chart-col:hover .chart-col-label,
+.chart-col.active-col .chart-col-label {
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+.tag-current {
+  display: inline-block;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 0.58rem;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 4px;
+  margin-left: 3px;
+  letter-spacing: 0.3px;
+  vertical-align: middle;
+}
+
+/* Floating interactive tooltip */
+.chart-bar-tooltip {
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #011e48;
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(1, 30, 72, 0.3);
+  z-index: 10;
+}
+
+.chart-bar-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px 4px 0 4px;
+  border-style: solid;
+  border-color: #011e48 transparent transparent transparent;
+}
+
+.chart-col:hover .chart-bar-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Micro metrics footer */
+.chart-footer-metrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  gap: 12px;
+}
+
+.chart-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.metric-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.metric-label {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.metric-val {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.metric-unit {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* --- PIE / DONUT CHART STYLES --- */
+.donut-chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 240px;
+  padding: 6px 0;
+}
+
+.donut-svg-wrap {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  transition: transform 0.6s ease;
+}
+
+.donut-track {
+  stroke: #f1f5f9;
+}
+
+.donut-segment {
+  cursor: pointer;
+  transform-origin: 110px 110px;
+  transition: stroke-dashoffset 1.3s cubic-bezier(0.16, 1, 0.3, 1), stroke-width 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
+}
+
+.donut-segment:hover {
+  stroke-width: 25px;
+  filter: drop-shadow(0 0 8px rgba(28, 122, 236, 0.45));
+}
+
+.donut-center-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+}
+
+.donut-center-number {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1.1;
+  font-family: var(--font-sans);
+  letter-spacing: -0.5px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.donut-center-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  transition: color 0.2s ease;
+}
+
+.donut-center-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--dash-accent);
+  margin-top: 1px;
+  transition: color 0.2s ease;
+}
+
+.donut-legend-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.donut-legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 11px;
+  border-radius: 9px;
+  background: var(--dash-bg);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.donut-legend-item:hover,
+.donut-legend-item.active {
+  background: #ffffff;
+  border-color: var(--dash-accent);
+  transform: translateX(4px);
+  box-shadow: 0 3px 12px rgba(28, 122, 236, 0.1);
+}
+
+.legend-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-bullet {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.legend-text {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.legend-values {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.legend-count {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.legend-percent {
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
 /* Timeline & Sprint Milestone Tracker */
 .milestone-list {
   display: flex;
@@ -1147,5 +1601,59 @@ body.user-dashboard-body {
   }
   .user-profile-meta {
     display: none;
+  }
+
+  /* Responsive Charts Optimization */
+  .bar-chart-container {
+    height: 210px;
+    gap: 8px;
+  }
+  .chart-y-axis {
+    min-width: 36px;
+    font-size: 0.62rem;
+  }
+  .chart-bars-wrap {
+    padding: 0 4px;
+    gap: 6px;
+  }
+  .chart-bar-outer {
+    max-width: 32px;
+  }
+  .chart-col-label {
+    font-size: 0.65rem;
+  }
+  .tag-current {
+    display: none;
+  }
+  .chart-footer-metrics {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .donut-chart-container {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+  }
+  .donut-legend-list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .chart-y-axis {
+    display: none;
+  }
+  .bar-chart-container {
+    height: 195px;
+  }
+  .chart-col-label {
+    font-size: 0.6rem;
+  }
+  .chart-bar-val {
+    font-size: 0.65rem;
+  }
+  .donut-svg-wrap {
+    width: 170px;
+    height: 170px;
   }
 }

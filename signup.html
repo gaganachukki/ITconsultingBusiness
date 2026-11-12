@@ -324,6 +324,15 @@
           btn.innerHTML = '<span>Creating Account...</span>';
           btn.disabled = true;
 
+          // Save registered profile for immediate sync
+          if (window.StacklyAuth) {
+            window.StacklyAuth.login(email, selectedRole, fullName);
+          } else {
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userName', fullName);
+            localStorage.setItem('userRole', selectedRole);
+          }
+
           setTimeout(() => {
             alert(`Enterprise account created for ${fullName}! Redirecting to Login...`);
             window.location.href = 'login.html';

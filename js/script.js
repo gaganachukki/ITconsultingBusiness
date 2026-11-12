@@ -2,7 +2,137 @@
  * STACKIN IT CONSULTING - MAIN SCRIPT (script.js)
  */
 
+// Global Authentication & Dashboard Profile State Controller
+window.StacklyAuth = {
+  parseProfile(email, fallbackName) {
+    if (!email || typeof email !== 'string' || !email.includes('@')) {
+      return {
+        email: email || '',
+        name: fallbackName || 'User',
+        initials: (fallbackName || 'US').substring(0, 2).toUpperCase()
+      };
+    }
+
+    const cleanEmail = email.trim();
+    const lower = cleanEmail.toLowerCase();
+
+    // Known specific defaults
+    if (lower === 'a.hayes@apexlogistics.com' || lower.startsWith('a.hayes@')) {
+      return { email: cleanEmail, name: 'Alexander Hayes', initials: 'AH' };
+    }
+    if (lower === 'arun.kumar@stackly.com' || lower.startsWith('arun.kumar@')) {
+      return { email: cleanEmail, name: 'Arun Kumar', initials: 'AK' };
+    }
+
+    // Check if registered with custom name
+    try {
+      const registered = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+      if (registered[lower] && registered[lower].name) {
+        const regName = registered[lower].name;
+        const parts = regName.trim().split(/\s+/).filter(Boolean);
+        const inits = parts.length >= 2 
+          ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+          : regName.substring(0, 2).toUpperCase();
+        return { email: cleanEmail, name: regName, initials: inits };
+      }
+    } catch(e) {}
+
+    // Derive name from email prefix
+    const localPart = cleanEmail.split('@')[0];
+    const parts = localPart.split(/[._\-+]+/).filter(Boolean);
+
+    if (parts.length === 0) {
+      return { email: cleanEmail, name: fallbackName || 'User', initials: (fallbackName || 'US').substring(0, 2).toUpperCase() };
+    }
+
+    const cleanParts = parts.map(p => {
+      const withoutDigits = p.replace(/\d+$/, '');
+      const word = withoutDigits.length > 0 ? withoutDigits : p;
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+
+    const name = cleanParts.join(' ');
+    let initials = 'US';
+    if (cleanParts.length >= 2) {
+      initials = (cleanParts[0][0] + cleanParts[cleanParts.length - 1][0]).toUpperCase();
+    } else if (cleanParts.length === 1 && cleanParts[0].length >= 2) {
+      initials = cleanParts[0].substring(0, 2).toUpperCase();
+    } else if (cleanParts.length === 1) {
+      initials = cleanParts[0].substring(0, 1).toUpperCase();
+    }
+
+    return { email: cleanEmail, name, initials };
+  },
+
+  login(email, role, customName) {
+    const profile = this.parseProfile(email, role === 'admin' ? 'Arun Kumar' : 'Alexander Hayes');
+    if (customName && customName.trim()) {
+      profile.name = customName.trim();
+      const parts = profile.name.split(/\s+/).filter(Boolean);
+      profile.initials = parts.length >= 2
+        ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+        : profile.name.substring(0, 2).toUpperCase();
+    }
+    profile.role = role || 'client';
+
+    localStorage.setItem('userEmail', profile.email);
+    localStorage.setItem('userName', profile.name);
+    localStorage.setItem('userInitials', profile.initials);
+    localStorage.setItem('userRole', profile.role);
+    localStorage.setItem('currentUser', JSON.stringify(profile));
+    return profile;
+  },
+
+  getUser() {
+    try {
+      const stored = localStorage.getItem('currentUser');
+      if (stored) return JSON.parse(stored);
+    } catch(e) {}
+
+    const email = localStorage.getItem('userEmail');
+    if (email) {
+      return {
+        email: email,
+        name: localStorage.getItem('userName') || 'User',
+        initials: localStorage.getItem('userInitials') || 'US',
+        role: localStorage.getItem('userRole') || 'client'
+      };
+    }
+    return null;
+  },
+
+  syncDashboardUI() {
+    const user = this.getUser();
+    if (!user || !user.email) return;
+
+    // User Dashboard Profile Elements
+    const userAvatar = document.getElementById('userProfileAvatar') || document.querySelector('.user-profile-avatar');
+    const userName = document.getElementById('userProfileName') || document.querySelector('.user-profile-name');
+    const dropdownUserName = document.getElementById('dropdownUserName') || document.querySelector('#profileDropdown .dropdown-header p:first-child');
+    const dropdownUserEmail = document.getElementById('dropdownUserEmail') || document.querySelector('#profileDropdown .dropdown-header p:last-child');
+
+    if (userAvatar && user.initials) userAvatar.textContent = user.initials;
+    if (userName && user.name) userName.textContent = user.name;
+    if (dropdownUserName && user.name) dropdownUserName.textContent = user.name;
+    if (dropdownUserEmail && user.email) dropdownUserEmail.textContent = user.email;
+
+    // Admin Dashboard Profile Elements
+    const adminAvatar = document.getElementById('adminProfileAvatar') || document.querySelector('.admin-avatar');
+    const adminName = document.getElementById('adminProfileName') || document.querySelector('.admin-profile-name');
+    const adminDropdownUserName = document.getElementById('adminDropdownUserName') || document.querySelector('#adminProfileDropdown .admin-dropdown-header p:first-child');
+    const adminDropdownUserEmail = document.getElementById('adminDropdownUserEmail') || document.querySelector('#adminProfileDropdown .admin-dropdown-header p:last-child');
+
+    if (adminAvatar && user.initials) adminAvatar.textContent = user.initials;
+    if (adminName && user.name) adminName.textContent = user.name;
+    if (adminDropdownUserName && user.name) adminDropdownUserName.textContent = user.name;
+    if (adminDropdownUserEmail && user.email) adminDropdownUserEmail.textContent = user.email;
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Sync Profile info across dashboards
+  window.StacklyAuth.syncDashboardUI();
+
   // Elements
   const header = document.querySelector('.site-header');
   const mobileToggle = document.querySelector('.mobile-toggle');
