@@ -189,19 +189,19 @@
               <span class="status-pill info">3 Unread</span>
             </div>
             <div class="dropdown-list">
-              <a href="#cloud" class="dropdown-item unread">
+              <a href="#tab-cloud" class="dropdown-item unread">
                 <div>
                   <p class="dropdown-item-title">EKS Cluster v2.4 Deployed</p>
                   <span class="dropdown-item-time">Production staging completed &bull; 12m ago</span>
                 </div>
               </a>
-              <a href="#security" class="dropdown-item unread">
+              <a href="#tab-security" class="dropdown-item unread">
                 <div>
                   <p class="dropdown-item-title">SOC2 Audit Passed (Zero Vulnerabilities)</p>
                   <span class="dropdown-item-time">Quarterly compliance audit approved &bull; 2h ago</span>
                 </div>
               </a>
-              <a href="#invoices" class="dropdown-item unread">
+              <a href="#tab-invoices" class="dropdown-item unread">
                 <div>
                   <p class="dropdown-item-title">November Retainer Statement Ready</p>
                   <span class="dropdown-item-time">Invoice #STK-2026-114 available for download</span>
@@ -238,8 +238,8 @@
               </div>
             </div>
             <div class="dropdown-list">
-              <a href="#overview" class="dropdown-item">Account Settings</a>
-              <a href="#invoices" class="dropdown-item">Billing &amp; Tax Info</a>
+              <a href="404.html" class="dropdown-item">Account Settings</a>
+              <a href="404.html" class="dropdown-item">Billing &amp; Tax Info</a>
               <a href="index.html" class="dropdown-item">Stackly Main Site</a>
               <a href="login.html" class="dropdown-item" style="color:#ef4444; font-weight:700;">Sign Out</a>
             </div>
@@ -520,7 +520,7 @@
             <p class="dash-page-subtitle">Real-time health telemetry across AWS, Azure, and Google Cloud managed environments.</p>
           </div>
           <div class="dash-header-actions">
-            <button type="button" class="btn-top-action">
+            <button type="button" class="btn-top-action" onclick="window.location.href='404.html'" data-action="404">
               <span>+ Provision Node Group</span>
             </button>
           </div>
@@ -996,13 +996,18 @@
       });
 
       // Handle URL Hash Navigation (e.g. userdashboard.html#cloud)
-      if (window.location.hash) {
-        const hash = window.location.hash.substring(1);
-        const targetTab = document.getElementById(`tab-${hash}`) ? `tab-${hash}` : (document.getElementById(hash) ? hash : null);
-        if (targetTab) {
-          activateTab(targetTab);
+      function handleHashChange() {
+        if (window.location.hash) {
+          const hash = window.location.hash.substring(1);
+          const targetTab = document.getElementById(hash) ? hash : (document.getElementById(`tab-${hash}`) ? `tab-${hash}` : null);
+          if (targetTab) {
+            activateTab(targetTab);
+            if (notifDropdown) notifDropdown.classList.remove('show');
+          }
         }
       }
+      handleHashChange();
+      window.addEventListener('hashchange', handleHashChange);
 
       // 2. Mobile Sidebar Drawer
       const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -1125,5 +1130,6 @@
   <!-- GSAP Animation Engine & Micro-Interactions -->
   <script src="js/vendor/gsap.min.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

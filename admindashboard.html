@@ -230,8 +230,8 @@
                 <p style="font-size:0.75rem; color:#64748b;">arun.kumar@stackly.com</p>
               </div>
             </div>
-            <a href="#admin-tab-overview" class="admin-dropdown-item">Executive Settings</a>
-            <a href="#admin-tab-financials" class="admin-dropdown-item">Practice P&amp;L Statements</a>
+            <a href="404.html" class="admin-dropdown-item">Executive Settings</a>
+            <a href="404.html" class="admin-dropdown-item">Practice P&amp;L Statements</a>
             <a href="index.html" class="admin-dropdown-item">View Public Website</a>
             <a href="login.html" class="admin-dropdown-item" style="color:#ef4444; font-weight:700;">Sign Out</a>
           </div>
@@ -893,13 +893,19 @@
       });
 
       // Handle Hash URLs (e.g. admindashboard.html#clients)
-      if (window.location.hash) {
-        const hash = window.location.hash.substring(1);
-        const targetId = document.getElementById(`admin-tab-${hash}`) ? `admin-tab-${hash}` : (document.getElementById(hash) ? hash : null);
-        if (targetId) {
-          activateAdminTab(targetId);
+      function handleAdminHashChange() {
+        if (window.location.hash) {
+          const hash = window.location.hash.substring(1);
+          const targetId = document.getElementById(hash) ? hash : (document.getElementById(`admin-tab-${hash}`) ? `admin-tab-${hash}` : null);
+          if (targetId) {
+            activateAdminTab(targetId);
+            const adminNotifDropdown = document.getElementById('adminNotifDropdown');
+            if (adminNotifDropdown) adminNotifDropdown.classList.remove('show');
+          }
         }
       }
+      handleAdminHashChange();
+      window.addEventListener('hashchange', handleAdminHashChange);
 
       // 2. Mobile Sidebar Drawer
       const toggleBtn = document.getElementById('adminMobileToggle');
@@ -1011,5 +1017,6 @@
   <!-- GSAP Animation Engine & Micro-Interactions -->
   <script src="js/vendor/gsap.min.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

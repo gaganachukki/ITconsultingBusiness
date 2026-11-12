@@ -158,22 +158,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. Universal Unused Links & Buttons Router to 404
   document.addEventListener('click', (e) => {
-    // Links with empty, '#', or javascript placeholder href
+    // Links with empty, '#', or unhandled anchor/javascript href
     const link = e.target.closest('a');
     if (link) {
-      const href = link.getAttribute('href');
-      if (href === '#' || href === '' || href === 'javascript:void(0)' || href === 'javascript:;') {
+      const href = (link.getAttribute('href') || '').trim();
+      if (!href || href === '#' || href === 'javascript:void(0)' || href === 'javascript:;' || href.toLowerCase().startsWith('javascript:')) {
         e.preventDefault();
         window.location.href = '404.html';
         return;
       }
+
+      // Check if hash target exists on the current page
+      if (href.startsWith('#') && href.length > 1) {
+        if (!link.hasAttribute('data-open-modal') && !link.hasAttribute('data-tab')) {
+          try {
+            const target = document.querySelector(href);
+            if (!target) {
+              e.preventDefault();
+              window.location.href = '404.html';
+              return;
+            }
+          } catch (err) {
+            e.preventDefault();
+            window.location.href = '404.html';
+            return;
+          }
+        }
+      }
     }
 
     // Unhandled or placeholder buttons
-    const btn = e.target.closest('button[data-action="404"], button.btn-unused');
+    const btn = e.target.closest('button');
     if (btn) {
-      e.preventDefault();
-      window.location.href = '404.html';
+      if (btn.getAttribute('data-action') === '404' || btn.classList.contains('btn-unused') || btn.classList.contains('social-btn')) {
+        e.preventDefault();
+        window.location.href = '404.html';
+      }
     }
   });
 
